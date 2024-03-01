@@ -18,6 +18,11 @@ h3 {
 	color: hsl(360, 90%, 50%);
 }
 
+label {
+	font-size: 18px;
+	color: hsl(360, 90%, 50%);
+}
+
 p {
 	color: hsl(229, 50%, 78%);
 }
