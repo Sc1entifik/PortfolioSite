@@ -1,0 +1,23 @@
+body {
+	background-color: hsl(229,82%,25%);
+}
+
+h1 {
+	text-align: center;
+	font-size: 72px;
+	color: hsl(360, 90%, 50%);
+}
+
+h2 {
+	font-size: 42px;
+	text-align: center;
+	color: hsl(360, 90%, 50%);
+}
+
+h3 {
+	color: hsl(360, 90%, 50%);
+}
+
+p {
+	color: hsl(229, 50%, 78%);
+}
