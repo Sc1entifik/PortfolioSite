@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		<script src="contact.js" defer></script>
+	</head>
+
+	<body>
+
+		<form id="form" action="/contact" enctype="application/x-www-form-urlencoded" method="post">
+
+			<label>Name:</label><br>
+				<input type="text" name="name" required><br><br>
+
+			<label>E-mail:</label><br>
+				<input type="email" name="email" required><br><br>
+
+			<label>Message:</label><br>
+			<textarea name="message" rows="6" cols="20" required></textarea><br><br>
+				
+			<button type="submit" value="Submit">Send Message</button>
+		</form>
+
+	</body>
+</html>
+

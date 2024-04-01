@@ -2,12 +2,12 @@
 This is my developer portfolio website that has links to my best projects.
 
 ## Things I'm Going To Add
- + Contact me form that allows you to automate an e-mail to me without exposing my e-mail address or sensitive information.
- + Attractive color combination that both grabs attention but is not over stylish with too much CSS. Less is more.
- + Pictures showing off my projects in action!
++ Pictures showing off my projects in action!
++ Get form page to route to success or failure message site on submission to prevent spamming.
++ Add new font styling to page.
++ Fill page in with actual projects instead of Lorem Ipsum examples
 
 
 ## Progress
-    + Building Contact form
-    + Figuring out how to get LSP support for JS in NVIM
-    + Building Class for automating e-mail for web app.
++ Form now creates e-mail using environment variables and classes with an OOP style.
+
