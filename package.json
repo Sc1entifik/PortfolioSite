@@ -1,7 +1,7 @@
 {
   "name": "portfoliosite",
-  "type": "module",
   "version": "1.0.0",
+  "type": "module",
   "description": "This is my developer portfolio website that has links to my best projects.",
   "main": "contact.js",
   "scripts": {

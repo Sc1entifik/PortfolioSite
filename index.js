@@ -1,29 +1,31 @@
 import express from "express";
-import path from "path";
-import { fileURLToPath } from "url";
-import dotenv from "dotenv";
-import { sendMessageFromForm } from "./mailer.mjs";
+import { ProjectRoutes } from "./projectRoutes.mjs";
+import { returnMailerFromForm } from "./mailer.mjs";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 const app = express();
 
-dotenv.config()
-app.use(express.static(path.join(__dirname, "public")));
-const encodeOptions = express.urlencoded({
-	extended: false,
-	limit: 10000,
-	parameterLimit: 3,
-});
+app.use(express.static("public"));
 
 app.set("view engine", "html");
 
-app.get("/", (req, res) => res.sendFile("index.html"));
-app.get("/contact", (req, res) => res.sendFile("contact.html"));
+app.get("/", (req, res) => res.sendFile(ProjectRoutes.homepage));
+app.get("/contact", (req, res) => res.sendFile(ProjectRoutes.contactForm));
+app.get("/contactSuccess", (req, res) => res.sendFile(ProjectRoutes.contactSuccess));
+app.get("/contactFailure", (req, res) => res.sendFile(ProjectRoutes.contactFailure));
 
-app.post("/contact", encodeOptions, (req, res) => {
-	sendMessageFromForm(req.body);
+app.post("/contact", express.urlencoded(ProjectRoutes.contactPostOptions), async (req, res) => {
+
+	let mailer = returnMailerFromForm(req.body); 
+	const mailSent = await mailer.sendEmailThenReturnStatus();
+
+	if (mailSent) {
+		res.sendFile(ProjectRoutes.contactSuccess);
+
+	} else {
+		res.sendFile(ProjectRoutes.contactFailure);
+	}
+		
 });
 
-app.listen(process.env.PORT, () => console.log(`Example app listening on port ${process.env.PORT}`));
+app.listen(ProjectRoutes.port, () => console.log(`Example app listening on port ${ProjectRoutes.port}`));

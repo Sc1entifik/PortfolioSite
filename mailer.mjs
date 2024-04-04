@@ -44,33 +44,25 @@ class EmailAccountMailer {
 	}
 
 
-	sendEmail() {
+	sendEmailThenReturnStatus() {
 		const transporter = this.#createTransporter();
 		const mail = this.#createMailObject();
-		transporter.sendMail(mail, (error, info) => {
-			if (error) {
-				console.error("Error sending email: " + error );
-			} else {
-				console.log("Email sent: " + info.response);
-			}
-		});
+		
+		return transporter.sendMail(mail).catch(_error => false).then(_value => true);
 
 	}
 };
 
 
-
 function createAccountMailer(from, subject, message) {
 	dotenv.config();
 	return new EmailAccountMailer(process.env.SERVICE, process.env.USER_NAME, process.env.PASSWORD, from, process.env.USER_NAME, subject, message);
-
-
 }
 
 
-export function sendMessageFromForm(form) {
-	const mailAccount = createAccountMailer(form.email, "PORTFOLIO SITE CONTACT REQUEST", `NAME: ${form.name}\n\n` + form.message);
-	mailAccount.sendEmail();
+export function returnMailerFromForm(form) {
+	return createAccountMailer(form.email, "PORTFOLIO SITE CONTACT REQUEST", `NAME: ${form.name}\n\n` + form.message);
 }
+	
 
 
