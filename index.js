@@ -1,5 +1,5 @@
 import express from "express";
-import { ProjectRoutes } from "./projectRoutes.mjs";
+import { ProjectRoutes, postErrorMiddleware } from "./projectRoutesAndMiddleware.mjs";
 import { returnMailerFromForm } from "./mailer.mjs";
 
 
@@ -14,7 +14,8 @@ app.get("/contact", (req, res) => res.sendFile(ProjectRoutes.contactForm));
 app.get("/contactSuccess", (req, res) => res.sendFile(ProjectRoutes.contactSuccess));
 app.get("/contactFailure", (req, res) => res.sendFile(ProjectRoutes.contactFailure));
 
-app.post("/contact", express.urlencoded(ProjectRoutes.contactPostOptions), async (req, res) => {
+
+app.post("/contact", express.urlencoded(ProjectRoutes.contactPostOptions), postErrorMiddleware, async (req, res) => {
 
 	let mailer = returnMailerFromForm(req.body); 
 	const mailSent = await mailer.sendEmailThenReturnStatus();

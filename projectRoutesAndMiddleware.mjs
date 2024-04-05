@@ -16,3 +16,14 @@ export class ProjectRoutes {
 	static contactPostOptions = {extended: false, limit: 10000, parameterLimit: 3,};
 	
 }
+
+
+export function postErrorMiddleware(err,req,res,next) {
+	if (err) {
+		console.error(err)
+		res.sendFile(ProjectRoutes.contactFailure);
+
+	} else {
+		next();
+	}
+}
