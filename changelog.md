@@ -19,6 +19,9 @@
 - Fixed POST error bug by adding new middleware step to deal with error.
 - Renamed projectRoutes.mjs to projectRoutesAndMiddleware.mjs to reflect file now holds routing middleware.
 
+### v 0.2.2
+- Added CAPTCHA test however page won't route after POST request sent.
+- Need to figure out CAPTCHA test routing.
 
 ## Things Coming
 - Better Styling.

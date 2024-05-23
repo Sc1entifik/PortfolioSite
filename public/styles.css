@@ -1,4 +1,10 @@
+@font-face {
+	font-family: 'steam-punk';
+	src: url("DINNextLTPro-Bold.ttf");
+}
+
 body {
+	font-family: steam-punk;
 	background-color: hsl(229,82%,25%);
 }
 
