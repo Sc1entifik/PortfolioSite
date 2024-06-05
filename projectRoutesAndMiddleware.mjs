@@ -11,6 +11,7 @@ export class ProjectRoutes {
 	static port = process.env.PORT;
 	static homepage = ProjectRoutes.#public + "index.html";
 	static captchaForm = ProjectRoutes.#public + "captcha.html";
+	static captchaFailure = ProjectRoutes.#public + "captchaFailure.html";
 	static contactForm = ProjectRoutes.#public + "contact.html";
 	static contactSuccess = ProjectRoutes.#public + "contactSuccess.html";
 	static contactFailure = ProjectRoutes.#public + "contactFailure.html";

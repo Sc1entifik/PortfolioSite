@@ -1,20 +1,35 @@
 import express from "express";
+import dotenv from "dotenv";
+import { createCanvas } from "canvas";
+import { CaptchaGenerator } from "./captchaClass.mjs";
 import { ProjectRoutes, postErrorMiddleware } from "./projectRoutesAndMiddleware.mjs";
 import { returnMailerFromForm } from "./mailer.mjs";
-import dotenv from "dotenv";
+
+let currentCaptchas = [];
 
 dotenv.config;
 const app = express();
 
 app.use(express.static("public"));
 
-app.set("view engine", "html");
+app.set("view engine", "pug");
 
-app.get("/", (req, res) => res.sendFile(ProjectRoutes.homepage));
-app.get("/contact", (req, res) => res.sendFile(ProjectRoutes.contactForm));
-app.get("/contactSuccess", (req, res) => res.sendFile(ProjectRoutes.contactSuccess));
-app.get("/contactFailure", (req, res) => res.sendFile(ProjectRoutes.contactFailure));
-app.get("/captcha", (req, res) => res.sendFile(ProjectRoutes.captchaForm));
+app.get("/", (req, res) => res.render("index"));
+app.get("/contact", (req, res) => res.render("contact"));
+app.get("/contactSuccess", (req, res) => res.render("contactSuccess"));
+app.get("/contactFailure", (req, res) => res.render("contactFailure"));
+app.get("/captcha", (req, res) => {
+	const defaultWidth = 200;
+	const defaultHeight = 100;
+	const canvas = createCanvas(defaultWidth, defaultHeight);
+	const captchaObject = new CaptchaGenerator(canvas.width, canvas.height);
+	const ctx = canvas.getContext("2d");
+	captchaObject.insertJson(currentCaptchas);
+	captchaObject.configureCaptchaCanvas(ctx);
+
+	res.render("captcha", {canvas: canvas.toDataURL(), id: captchaObject.id});
+
+});
 
 
 
@@ -23,22 +38,22 @@ app.post("/contact", express.urlencoded(ProjectRoutes.contactPostOptions), postE
 	const mailSent = await mailer.sendEmailThenReturnStatus();
 
 	if (mailSent) {
-		res.sendFile(ProjectRoutes.contactSuccess);
+		res.render("contactSuccess");
 
 	} else {
-		res.sendFile(ProjectRoutes.contactFailure);
+		res.render("contactFailure");
 	}
 		
 });
 
-app.post("/captcha", express.json(), postErrorMiddleware, (req, res) => {
-	if (req.body.postPass === process.env.POST_PASS && req.body.userResponse === req.body.captchaPhrase) {
-		console.log("Why won't the page change?")
-		res.sendFile(ProjectRoutes.contactForm);
-		console.log(res.headersSent);
-		
+app.post("/captcha", express.urlencoded({extended:false}), postErrorMiddleware, (req, res) => {
+	const activeCaptcha = currentCaptchas.filter(x => x.id === req.body.id)[0];
+	currentCaptchas = currentCaptchas.filter(x => x.id !== activeCaptcha.id); //removes the activeCaptcha entry from the currentCaptchas array to free up memory and increase lookup speed
+
+	if (activeCaptcha.captcha === req.body.answer) {
+		res.render("contact");
 	} else {
-		console.log(`req.body.postPass: ${req.body.postPass}\nprocess.env.POST_PASS: ${process.env.POST_PASS}\nreq.body.userResponse: ${req.body.userResponse}\nreq.body.captchaPhrase: ${req.body.captchaPhrase}\n\n${req.body.postPass === process.env.POST_PASS}\n${req.body.userResponse === req.body.captchaPhrase}`);
+		res.render("captchaFailure");
 	}
 });
 

@@ -23,6 +23,12 @@
 - Added CAPTCHA test however page won't route after POST request sent.
 - Need to figure out CAPTCHA test routing.
 
+### v 0.3
+- Refactored code to use pug templating engine.
+- Used canvas module to create CAPTCHA canvas on the backend.
+- CAPTCHA test now handled fully on back end.
+
+
 ## Things Coming
 - Better Styling.
 - Portfolio content.

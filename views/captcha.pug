@@ -1,0 +1,14 @@
+html
+	head
+		link(rel="stylesheet", href="/styles.css")
+		link(rel="stylesheet", href="/captcha.css")
+	body
+		div(class="center")
+			h2 I Look Forward To Contacting You.
+			h2 However I Need To Make Sure You Are Not A Robot!
+			div(class="captcha-background")
+				img(id="captcha", src= canvas)
+				form(action="/captcha", method="post", id="validate")
+					input(type="hidden", value= id, name="id")
+					textarea(name="answer", rows="2", cols="20", placeholder="Match captcha phrase here.")
+					button Submit
