@@ -55,7 +55,7 @@ export class CaptchaGenerator {
 		const fontSize = (fontSizeRatio/this.#captchaPhrase.length) * 100;
 		const fontRatio = this.width/fontSize;
 		const pixelValue = (this.width/fontRatio) * magnifier;
-		const fontSettings = `${pixelValue}px steam-punk`;
+		const fontSettings = `${pixelValue}px sans-serif`;
 
 		return fontSettings;
 	}

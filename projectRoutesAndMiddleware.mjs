@@ -23,8 +23,7 @@ export class ProjectRoutes {
 export function postErrorMiddleware(err,req,res,next) {
 	if (err) {
 		console.error(err)
-		res.sendFile(ProjectRoutes.contactFailure);
-
+		res.render("contactFailure");
 	} else {
 		next();
 	}

@@ -28,7 +28,12 @@
 - Used canvas module to create CAPTCHA canvas on the backend.
 - CAPTCHA test now handled fully on back end.
 
+### v 0.3.0.1
+- Spruced up css on CAPTCHA test and contact form.
+- Added radio buttons via a table. 
+
 
 ## Things Coming
+- Look into doing radio buttons without table.
 - Better Styling.
 - Portfolio content.
