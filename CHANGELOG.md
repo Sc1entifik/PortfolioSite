@@ -32,8 +32,15 @@
 - Spruced up css on CAPTCHA test and contact form.
 - Added radio buttons via a table. 
 
+### v 0.3.1
+- Put contact form items inside a flex box.
+- Got rid of the radio buttons table by using align-text: justify inside the flex box rules.
+- Refactored mailer.mjs module to take req.body as a parameter instead of using a lot of constructor parameters inside a factory function.
+- mailer.mjs now uses radio button parameters to customize e-mail subject field.
+- Improved css
 
 ## Things Coming
-- Look into doing radio buttons without table.
+- Get images to personalize website.
+- Refactor projectRoutesAndMiddleware.mjs because pug configuration doesn't seem to need it much.
 - Better Styling.
 - Portfolio content.

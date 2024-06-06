@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import { createCanvas } from "canvas";
 import { CaptchaGenerator } from "./captchaClass.mjs";
 import { ProjectRoutes, postErrorMiddleware } from "./projectRoutesAndMiddleware.mjs";
-import { returnMailerFromForm } from "./mailer.mjs";
+import { PortfolioSiteMailer } from "./mailer.mjs";
 
 let currentCaptchas = [];
 
@@ -15,9 +15,6 @@ app.use(express.static("public"));
 app.set("view engine", "pug");
 
 app.get("/", (req, res) => res.render("index"));
-app.get("/contact", (req, res) => res.render("contact"));
-app.get("/contactSuccess", (req, res) => res.render("contactSuccess"));
-app.get("/contactFailure", (req, res) => res.render("contactFailure"));
 app.get("/captcha", (req, res) => {
 	const defaultWidth = 200;
 	const defaultHeight = 100;
@@ -34,7 +31,7 @@ app.get("/captcha", (req, res) => {
 
 
 app.post("/contact", express.urlencoded(ProjectRoutes.contactPostOptions), postErrorMiddleware, async (req, res) => {
-	let mailer = returnMailerFromForm(req.body); 
+	let mailer = new PortfolioSiteMailer(req.body);
 	const mailSent = await mailer.sendEmailThenReturnStatus();
 
 	if (mailSent) {

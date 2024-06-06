@@ -2,27 +2,15 @@
 	text-align: center;
 }
 
-.form-element {
-	margin-top: 1%;
+.text-field {
+	margin-top: 3%;
 }
 
-.button {
-	margin-top: 1%;
-}
-
-.reason {
-	vertical-align: middle;
-}
-
-table {
+.radio-flex {
+	display: inline-block;
 	text-align: justify;
 }
 
-td {
-	margin-right: 3%;
-	margin-bottom: 3%;
-}
-
-.radio-table {
-	display: inline-block;
+button {
+	margin-top: 1%;
 }

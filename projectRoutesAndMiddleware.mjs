@@ -15,7 +15,7 @@ export class ProjectRoutes {
 	static contactForm = ProjectRoutes.#public + "contact.html";
 	static contactSuccess = ProjectRoutes.#public + "contactSuccess.html";
 	static contactFailure = ProjectRoutes.#public + "contactFailure.html";
-	static contactPostOptions = {extended: false, limit: 10000, parameterLimit: 3,};
+	static contactPostOptions = {extended: false, limit: 10000, parameterLimit: 4,};
 	
 }
 
