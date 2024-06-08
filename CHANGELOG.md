@@ -39,7 +39,12 @@
 - mailer.mjs now uses radio button parameters to customize e-mail subject field.
 - Improved css
 
+### v 0.3.2
+- Changed currentCaptchas data structure in index.js from an array to a map for faster lookup, insertion, and deletion operations.
+- Added changes to index.pug
+
 ## Things Coming
+- Add custom styling to index.pug.
 - Get images to personalize website.
 - Refactor projectRoutesAndMiddleware.mjs because pug configuration doesn't seem to need it much.
 - Better Styling.

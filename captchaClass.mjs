@@ -36,13 +36,11 @@ export class CaptchaGenerator {
 	}
 
 
-	#generateUniqueId(jsonArray) {
+	#generateUniqueId(captchaMap) {
 		let newId = this.#randomPhrase();
-		let matchingElements = jsonArray.filter(x => x.id === newId);
 
-		while (matchingElements.length > 0) {
+		while (captchaMap.has(newId)) {
 			newId = this.#randomPhrase();
-			matchingElements = jsonArray.filter(x => x.id === newId);
 		}
 
 		return newId
@@ -71,9 +69,9 @@ export class CaptchaGenerator {
 	}
 
 
-	insertJson(jsonArray) {
-		this.#id = this.#generateUniqueId(jsonArray);
-		jsonArray.push({id:this.#id, captcha:this.#captchaPhrase});
+	insertMapEntry(captchaMap) {
+		this.#id = this.#generateUniqueId(captchaMap);
+		captchaMap.set(this.#id, this.#captchaPhrase);
 	}
 
 
