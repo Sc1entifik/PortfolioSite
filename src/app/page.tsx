@@ -1,14 +1,9 @@
-import { SiteMap } from "@/utils/siteMap";
+import LandingPageHeader from "./components/landingHeader"
 
 export default function Home() {
 	return (
-		<div className="bg-dos-blue min-h-[100vh] flex justify-center">
-			<div className="flex flex-col font-dos text-dos-white text-xl">
-				<h1>The quick brown fox jumps over the lazy dog.</h1>
-				<p>I wonder wtf like really wtf?</p>
-				<p>This always aligns left to right</p>
-				<p>Even though the block is centered</p>
-			</div>
+		<div className="flex flex-col justify-between h-[100dvh] w-[100dvw] text-[.61rem] font-dos text-dos-white m-2">
+			<LandingPageHeader numCh={40}/>
 		</div>
 	);
 }

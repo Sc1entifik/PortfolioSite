@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
 			fontFamily: {
-				dos: ["'Press Start 2P'", "monospace"],
+				dos: ["PressStart2P", "monospace"],
 			},
       colors: {
         background: "var(--background)",
