@@ -1,3 +1,5 @@
 export enum SiteMap {
-	Home = "/"
+	Home = "/",
+	Projects = "/projects",
+	Contact = "/contact"
 }

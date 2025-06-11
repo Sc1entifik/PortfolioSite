@@ -35,11 +35,11 @@ export default function LandingPageHeader({numCh} : {numCh: number}) {
 	}
 
 	return (
-		<div className="whitespace-pre subpixel-antialiased">
-			<p>{headerLine()}</p>
-			<p>{headerFiller("Dustin Rosenberry's")}</p>
-			<p>{headerFiller("Portfolio System")}</p>
-			<p>{headerLine()}</p>
-		</div>
+			<div className="whitespace-pre mt-1 mx-auto">
+				<p>{headerLine()}</p>
+				<p>{headerFiller("Dustin Rosenberry's")}</p>
+				<p>{headerFiller("Portfolio System")}</p>
+				<p>{headerLine()}</p>
+			</div>
 	)
 }
