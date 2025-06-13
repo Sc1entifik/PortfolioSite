@@ -8,7 +8,8 @@ export function useCharCount(measurerRef: React.RefObject<HTMLDivElement>) {
 			if (!measurerRef.current) return;
 
 			const charWidth = measurerRef.current.offsetWidth;
-			const screenWidth = window.innerWidth;
+			const screenWidth = window.innerWidth; 
+			//const screenWidth = document.documentElement.clientWidth;
 			const characterCount = Math.floor(screenWidth / charWidth);
 			setNumCh(characterCount);
 		};

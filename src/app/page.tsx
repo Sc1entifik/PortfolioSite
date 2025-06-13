@@ -1,12 +1,12 @@
-import LandingPageHeader from "./components/landingHeader"
+import LandingPageHeader from "./components/landingPageHeader/landingPageHeader";
 import MenuOptions from "./components/menuOptions";
 
 export default function Home() {
 	return (
-		<div className="flex flex-col justify-between h-[100dvh] w-[100dvw] text-[.94rem] mx-1 font-dos text-dos-white">
-			<LandingPageHeader numCh={25}/>
+		<div className="flex flex-col justify-between h-[100dvh] w-full text-[15px] sm:text-[22px] md:text-[27px] lg:text-[31px] font-dos text-dos-white overflow-hidden">
+			<LandingPageHeader/>
 			<MenuOptions/>
-			<p className="mb-2">{'>'} Enter Your Selection</p>
+			<p className="mb-1">{'>'} Enter Your Selection</p>
 		</div>
 	);
 }

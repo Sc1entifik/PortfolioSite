@@ -1,18 +1,27 @@
-const filledbox = "@";
+"use client"
+import { useRef } from "react";
+import { useCharCount } from "./useCharCount";
+import InvisibleMeasurementDiv from "./invisibleMeasurementDiv";
 
-export default function LandingPageHeader({numCh} : {numCh: number}) {
+const borderChar = "@";
+
+export default function LandingPageHeader() {
+	const measurerRef = useRef(null);
+	const numCh = useCharCount(measurerRef);
+
+
 	const headerLine = () => {
 		let headerString = "";
 
 		for (let i=0; i<numCh; i++) {
-			headerString += filledbox;
+			headerString += borderChar;
 		}
 
 		return headerString;
 	}
 
 	const headerFiller = (headerText: string) => {
-		const endCap = filledbox + filledbox;
+		const endCap = borderChar + borderChar;
 		const innerWidth = numCh - (endCap.length * 2);
 		const totalPadding = innerWidth - headerText.length;
 		const leftPadding = Math.floor(totalPadding / 2);
@@ -36,6 +45,7 @@ export default function LandingPageHeader({numCh} : {numCh: number}) {
 
 	return (
 			<div className="whitespace-pre mt-1 mx-auto">
+				<InvisibleMeasurementDiv ref={measurerRef} />
 				<p>{headerLine()}</p>
 				<p>{headerFiller("Dustin Rosenberry's")}</p>
 				<p>{headerFiller("Portfolio System")}</p>
