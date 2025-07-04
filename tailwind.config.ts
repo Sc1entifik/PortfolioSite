@@ -24,7 +24,7 @@ const config: Config = {
 					green: "hsl(120, 100%, 50%)",
 					yellow: "hsl(60, 100%, 50%)",
 				},
-				projectsPage: {
+				projects: {
 					titleRed: "hsl(0, 100%, 35%)",
 					headerRed: "hsl(10, 90%, 50%)",
 					borderGray: "hsl(0, 0%, 70%)",
