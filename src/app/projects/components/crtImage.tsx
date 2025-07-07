@@ -3,6 +3,12 @@ import Image from "next/image";
 export default function CrtImage({src}: {src: string}) {
 	return (
 		<div className="
+			transform
+			transition-transform
+			duration-300
+			hover:scale-[4]
+			hover:z-50
+			origin-right
 			relative 
 			w-[5.5rem]
 			aspect-[8/7] 
