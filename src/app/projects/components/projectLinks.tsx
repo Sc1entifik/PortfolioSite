@@ -6,8 +6,8 @@ export default function ProjectResources({githubLink, projectLink}:{githubLink: 
 			<div className="bg-projects-white text-projects-black flex justify-center items-center">
 				<p>SCROLL FOR MORE SOFTWARE</p>
 			</div>
-			<Link href={githubLink}>Check Out Project Code Here!</Link>
-			{projectLink && <Link href={projectLink}>Check Out App Website Here!</Link>}
+			<Link href={githubLink} target="_blank" rel="noopener noreferrer">Check Out Project Code Here!</Link>
+			{projectLink && <Link href={projectLink} target="_blank" rel="noopener noreferrer">Check Out App Website Here!</Link>}
 		</div>
 	);
 }
