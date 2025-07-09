@@ -32,6 +32,10 @@ const config: Config = {
 					white: "hsl(0, 0%, 100%)",
 				},
       },
+			screens: {
+				xsphone: "375px",
+				xs: "400px",
+			},
     },
   },
   plugins: [],
