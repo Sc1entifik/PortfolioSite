@@ -9,11 +9,9 @@ const config: Config = {
   theme: {
     extend: {
 			fontFamily: {
-				dos: ["PressStart2P", "monospace"],
+				dos: ["var(--font-dos)", "monospace"],
 			},
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
 				dos: {
 					blue: "hsl(240, 100%, 34%)",
 					red: "hsl(0, 100%, 50%)",

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useLayoutEffect } from "react";
+import { useEffect } from "react";
 import ProjectImages from "./components/projectImages";
 import ProjectResources from "./components/projectLinks";
 import ProjectTitleAndDescription from "./components/projectTitleAndDescription";
@@ -16,7 +16,7 @@ export default function Projects() {
 		},[]);
 
 	return (
-		<div className="bg-[hsl(220,60%,10%)] font-dos h-dvh w-full overflow-hidden flex flex-col items-center">
+		<div className="bg-[hsl(220,60%,10%)] h-dvh w-full overflow-hidden flex flex-col items-center">
 				<div className="flex m-4 h-5/6 max-w-[1536px]">
 					<ProjectTitleAndDescription
 						title="DFK Summoner Sheet" 
