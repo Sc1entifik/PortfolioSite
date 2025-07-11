@@ -23,6 +23,7 @@ const config: Config = {
 					yellow: "hsl(60, 100%, 50%)",
 				},
 				projects: {
+					backgroundNavy: "hsl(220, 60%, 10%)",
 					titleRed: "hsl(0, 100%, 35%)",
 					headerRed: "hsl(10, 90%, 50%)",
 					borderGray: "hsl(0, 0%, 70%)",

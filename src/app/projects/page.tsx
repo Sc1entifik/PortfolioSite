@@ -9,14 +9,16 @@ export default function Projects() {
 	useEffect(() => {
 		const oldBackgroundColor = document.body.style.backgroundColor;
 		document.documentElement.style.backgroundColor = "hsl(220, 60%, 10%)";
+		document.body.style.backgroundColor = "hsl(220, 60%, 10%)";
 
 		return () => {
 			document.documentElement.style.backgroundColor = oldBackgroundColor;
+			document.body.style.backgroundColor = oldBackgroundColor;
 		};
 		},[]);
 
 	return (
-		<div className="bg-[hsl(220,60%,10%)] h-dvh w-full overflow-hidden flex flex-col items-center">
+		<div className="bg-projects-backgroundNavy h-dvh w-full overflow-hidden flex flex-col items-center">
 				<div className="flex m-4 h-5/6 max-w-[1536px]">
 					<ProjectTitleAndDescription
 						title="DFK Summoner Sheet" 
