@@ -13,7 +13,7 @@ export default function CrtImage({src}: {src: string}) {
 			relative
 			w-[5.5rem]
 			xsphone:w-[6.5rem]
-			xs:w-[7.5rem]
+			xs:w-[7.8rem]
 			sm:w-36
 			md:w-48
 			lg:w-56

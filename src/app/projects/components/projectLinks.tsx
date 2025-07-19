@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function ProjectResources({githubLink, projectLink}:{githubLink: string, projectLink?: string}) {
 	return (
-		<div className="flex h-1/6 max-w-[1536px] w-[inherit] gap-3 text-xs xs:text-sm lg:text-lg justify-between mx-2 mb-1">
+		<div className="flex max-w-[1536px] w-[inherit] gap-4 text-[.65rem] xsphone:text-xs xs:text-[.8rem] lg:text-lg justify-between mx-2">
 			<div className="bg-projects-white text-projects-black flex justify-center items-center">
 				<p className="px-3 text-center">SCROLL FOR MORE SOFTWARE</p>
 			</div>

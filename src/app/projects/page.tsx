@@ -18,8 +18,8 @@ export default function Projects() {
 		},[]);
 
 	return (
-		<div className="bg-projects-backgroundNavy h-dvh w-full overflow-hidden flex flex-col items-center">
-				<div className="flex m-4 h-5/6 max-w-[1536px]">
+		<div className="flex flex-col flex-1 h-full w-full items-center justify-between">
+				<div className="flex grow mx-3 max-w-[1536px]">
 					<ProjectTitleAndDescription
 						title="DFK Summoner Sheet" 
 						header="NFT Genetics Precision"
