@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import ProjectImages from "./components/projectImages";
 import ProjectResources from "./components/projectLinks";
-import ProjectTitleAndDescription from "./components/projectTitleAndDescription";
+import ProjectDetails from "./components/projectDetails/projectDetails";
 
 export default function Projects() {
 	useEffect(() => {
@@ -20,9 +20,9 @@ export default function Projects() {
 	return (
 		<div className="flex flex-col flex-1 items-center justify-between gap-3 h-full w-full">
 				<div className="flex grow mx-3 max-w-[1536px]">
-					<ProjectTitleAndDescription
+					<ProjectDetails
 						title="DFK Summoner Sheet" 
-						header="NFT Genetics Precision"
+						descriptionHeader="NFT Genetics Precision"
 						description="Defi Kingdoms is a popular rpg influenced web-3 game where players collect NFT heros with stats that do jobs, battle, and go on missions on the Defi Kingdoms and Kaia blockchains.\nDFK Summoner Sheet helps players with one of the most complicated aspects of the game. Choosing hero pairs to summon other heros for their collection. Compare multiple summoning pairs for any hero all at once using real time blockchain genetic data from each hero and see all the relevant data neatly displayed on one screen."
 					/>
 					<ProjectImages imagePath2="/images/entryForm2.png" imagePath1="/images/SummonerSheetEntry.png" imagePath3="/images/summonSheet2.png"/>
