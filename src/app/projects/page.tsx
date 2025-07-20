@@ -18,7 +18,7 @@ export default function Projects() {
 		},[]);
 
 	return (
-		<div className="flex flex-col flex-1 h-full w-full items-center justify-between">
+		<div className="flex flex-col flex-1 items-center justify-between gap-3 h-full w-full">
 				<div className="flex grow mx-3 max-w-[1536px]">
 					<ProjectTitleAndDescription
 						title="DFK Summoner Sheet" 

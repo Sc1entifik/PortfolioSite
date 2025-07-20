@@ -9,17 +9,15 @@ export default function CrtImage({src}: {src: string}) {
 			hover:scale-[3]
 			md:hover:scale-[2]
 			hover:z-50
-			origin-top-right
+			origin-right
 			relative
+			aspect-[8/7]
 			w-[5.5rem]
 			xsphone:w-[6.5rem]
 			xs:w-[7.8rem]
 			sm:w-36
 			md:w-48
-			lg:w-56
-			xl:w-72
-			2xl:w-80
-			aspect-[8/7]
+			lg:w-60
 			overflow-hidden
 			rounded-[6px]
 			shadow-[inset_0_0_15px_rgba(0,0,0,0.7)]
