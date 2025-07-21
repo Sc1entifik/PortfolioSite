@@ -1,7 +1,7 @@
 export default function TitleHeader({title}: {title: string}) {
 	return <h1 className="
 		text-projects-titleRed
-		text[1.75rem]
+		text-[1.75rem]
 		xs:text-3xl
 		sm:text-6xl
 		lg:text-7xl

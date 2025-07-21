@@ -1,8 +1,8 @@
 export default function DescriptionParagraph({paragraph}: {paragraph: string}) {
 	return <p className="
 		text-projects-white
-		my-2
-		2xl:mb-8
+		mb-3
+		2xl:mb-6
 		text-[.6rem]
 		xs:text-[.67rem]
 		sm:text-sm

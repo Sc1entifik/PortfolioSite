@@ -2,8 +2,8 @@
 
 import { useEffect } from "react";
 import ProjectImages from "./components/projectImages";
-import ProjectResources from "./components/projectLinks";
 import ProjectDetails from "./components/projectDetails/projectDetails";
+import ProjectResources from "./components/projectResources/projectResources";
 
 export default function Projects() {
 	useEffect(() => {
