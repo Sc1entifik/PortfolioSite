@@ -4,10 +4,9 @@ export default function ProjectLinks({githubLink, projectLink}: {githubLink: str
 	return (
 		<div className="
 			flex
-			justify-between
-			xl:flex-col
-			xl:justify-start
-			xl:gap-y-4
+			md:flex-col
+			md:justify-start
+			md:gap-y-4
 		">
 			<Link href={githubLink} target="_blank" rel="noopener noreferrer">Check Out Project Code Here!</Link>
 			{projectLink && <Link href={projectLink} target="_blank" rel="noopener noreferrer">Check Out App Website Here!</Link>}

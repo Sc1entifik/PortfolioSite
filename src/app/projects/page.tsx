@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect } from "react";
-import ProjectImages from "./components/projectImages";
 import ProjectDetails from "./components/projectDetails/projectDetails";
 import ProjectResources from "./components/projectResources/projectResources";
+import ProjectImages from "./components/projectImages/projectImages";
 
 export default function Projects() {
 	useEffect(() => {
@@ -18,8 +18,8 @@ export default function Projects() {
 		},[]);
 
 	return (
-		<div className="flex flex-col flex-1 items-center justify-between gap-3 h-full w-full">
-				<div className="flex grow mx-3 max-w-[1536px]">
+		<div className="flex flex-col flex-1 grow items-center justify-between gap-3 h-full w-full">
+				<div className="flex mx-3 max-w-[1536px]">
 					<ProjectDetails
 						title="DFK Summoner Sheet" 
 						descriptionHeader="NFT Genetics Precision"

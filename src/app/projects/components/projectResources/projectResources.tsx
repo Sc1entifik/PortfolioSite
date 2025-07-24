@@ -1,26 +1,27 @@
-import Link from "next/link";
 import SoftwareScrollBanner from "./softwareScrollBanner";
 import ProjectLinks from "./projectLinks";
+import preferredRemValueAndSlopeVw from "../../preferredRemValueAndSlope";
 
 export default function ProjectResources({githubLink, projectLink}:{githubLink: string, projectLink?: string}) {
+	const minRem = .55
+	const maxRem = 2 
+	const [preferredRem, slopeVw] = preferredRemValueAndSlopeVw(minRem, maxRem); 
+
 	return (
-		<div className="
+		<div 
+			className="
 			flex
 			justify-between
 			gap-4
-			min-h-[4ch]
+			min-h-[3ch]
 			max-w-[1536px]
 			w-[inherit]
 			mb-1
 			mx-2
-			text-[.65rem]
-			xsphone:text-xs
-			xs:text-[.8rem]
-			sm:text-base
-			lg:text-lg
-			xl:text-xl
-			2xl:text-2xl
-			">
+			"
+
+			style={{fontSize: `clamp(${minRem}rem, ${preferredRem}rem + ${slopeVw}vw, ${maxRem}rem)`}}
+			>
 			<SoftwareScrollBanner/>
 			<ProjectLinks githubLink={githubLink} projectLink={projectLink}/>
 		</div>

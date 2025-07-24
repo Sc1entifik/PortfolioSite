@@ -1,8 +1,14 @@
 import Image from "next/image";
+import preferredRemValueAndSlopeVw from "../../preferredRemValueAndSlope";
 
 export default function CrtImage({src}: {src: string}) {
+	const minRem = 5.5;
+	const maxRem = 21;
+	const [preferredRem, slopeVw] = preferredRemValueAndSlopeVw(minRem, maxRem); 
+
 	return (
-		<div className="
+		<div 
+			className="
 			transform
 			transition-transform
 			duration-300
@@ -12,12 +18,6 @@ export default function CrtImage({src}: {src: string}) {
 			origin-right
 			relative
 			aspect-[8/7]
-			w-[5.5rem]
-			xsphone:w-[6.5rem]
-			xs:w-[7.8rem]
-			sm:w-36
-			md:w-48
-			lg:w-60
 			overflow-hidden
 			rounded-[6px]
 			shadow-[inset_0_0_15px_rgba(0,0,0,0.7)]
@@ -33,7 +33,10 @@ export default function CrtImage({src}: {src: string}) {
 			after:content-['']
 			after:bg-[repeating-linear-gradient(to_bottom,transparent,transparent_2px,black_2px,black_4px)]
 			after:opacity-10
-			after:z-20">
+			after:z-20"
+
+			style={{width : `clamp(${minRem}rem, ${preferredRem}rem + ${slopeVw}vw, ${maxRem}rem)`}}
+			>
 			<Image src={src} alt="project screenshot" fill className="object-cover z-0"/>
 		</div>
 	)

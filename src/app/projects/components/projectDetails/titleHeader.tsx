@@ -1,11 +1,14 @@
+import preferredRemValueAndSlopeVw from "../../preferredRemValueAndSlope";
+
 export default function TitleHeader({title}: {title: string}) {
-	return <h1 className="
-		text-projects-titleRed
-		text-[1.75rem]
-		xs:text-3xl
-		sm:text-6xl
-		lg:text-7xl
-		xl:text-[5rem]
-		2xl:text-[5.5rem]
-	">{title}</h1>
+	const minRem = 1.75;
+	const maxRem = 5.5;
+	const [preferredRemValue, slopeVw] = preferredRemValueAndSlopeVw(minRem, maxRem); 
+
+	return <h1 
+		className="text-projects-titleRed" 
+		style={{ fontSize: `clamp(${minRem}rem, ${preferredRemValue}rem + ${slopeVw}vw, ${maxRem}rem)` }}
+		>
+		{title} 
+	</h1>
 }
