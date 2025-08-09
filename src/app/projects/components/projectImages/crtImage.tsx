@@ -17,7 +17,7 @@ export default function CrtImage({src}: {src: string}) {
 			hover:z-50
 			origin-right
 			relative
-			aspect-[8/7]
+			aspect-[4/3]
 			overflow-hidden
 			rounded-[6px]
 			shadow-[inset_0_0_15px_rgba(0,0,0,0.7)]

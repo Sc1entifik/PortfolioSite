@@ -25,7 +25,7 @@ export default function Projects() {
 						descriptionHeader="NFT Genetics Precision"
 						description="Defi Kingdoms is a popular rpg influenced web-3 game where players collect NFT heros with stats that do jobs, battle, and go on missions on the Defi Kingdoms and Kaia blockchains.\nDFK Summoner Sheet helps players with one of the most complicated aspects of the game. Choosing hero pairs to summon other heros for their collection. Compare multiple summoning pairs for any hero all at once using real time blockchain genetic data from each hero and see all the relevant data neatly displayed on one screen."
 					/>
-					<ProjectImages imagePath2="/images/entryForm2.png" imagePath1="/images/SummonerSheetEntry.png" imagePath3="/images/summonSheet2.png"/>
+					<ProjectImages imagePath1="/images/dfkSummonerSheet/dfkSummonerSheet1.png" imagePath2="/images/dfkSummonerSheet/dfkSummonerSheet2.png" imagePath3="/images/dfkSummonerSheet/dfkSummonerSheet5cropped.png"/>
 				</div>
 				<ProjectResources githubLink="https://github.com/Sc1entifik/DFK-SummoningSheet" projectLink="https://scientifik.pythonanywhere.com/"/>
 		</div>
