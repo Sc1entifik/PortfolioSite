@@ -10,7 +10,11 @@ export default function DescriptionParagraph({paragraph}: {paragraph: string}) {
 		mb-3
 		2xl:mb-6
 		" style={{ fontSize : `clamp(${minRem}rem, ${preferredRem}rem + ${slopeVw}vw, ${maxRem}rem)` }}>
-		{paragraph}
+		{paragraph.split("\n")
+			.map(
+				(x: string, i: number) => <p key={i} className="mb-3 2xl:mb-6">{x}</p>
+			)
+		}
 	</p>
 
 }

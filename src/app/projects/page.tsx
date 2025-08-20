@@ -1,11 +1,17 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import ProjectDetails from "./components/projectDetails/projectDetails";
 import ProjectResources from "./components/projectResources/projectResources";
 import ProjectImages from "./components/projectImages/projectImages";
+import PortfolioSnapHeader from "./portfolioSnapHeader";
+import { Project, projects } from "./data/projects";
+import PortfolioSnapElement from "./portfolioSnapElement";
 
 export default function Projects() {
+	const headerRef = useRef<HTMLDivElement>(null);
+	const [headerHeight, setHeaderHeight] = useState(0);
+	/*
 	useEffect(() => {
 		const oldBackgroundColor = document.body.style.backgroundColor;
 		document.documentElement.style.backgroundColor = "hsl(220, 60%, 10%)";
@@ -16,18 +22,33 @@ export default function Projects() {
 			document.body.style.backgroundColor = oldBackgroundColor;
 		};
 		},[]);
+	*/
+
+	useEffect(() => {
+		const updateHeaderHeight = () => {
+			if (headerRef.current) {
+				setHeaderHeight(headerRef.current.offsetHeight);
+			}
+		};
+
+
+		updateHeaderHeight();
+		window.addEventListener("resize", updateHeaderHeight);
+
+		return () => window.removeEventListener("resize", updateHeaderHeight);
+	});
+
+	const portfolioProjects = projects.map((x: Project, i: number) => <PortfolioSnapElement key={i} portfolioProject={x} headerHeight={headerHeight}/>);
 
 	return (
-		<div className="flex flex-col flex-1 grow items-center justify-between gap-3 h-full w-full">
-				<div className="flex mx-3 max-w-[1536px]">
-					<ProjectDetails
-						title="DFK Summoner Sheet" 
-						descriptionHeader="NFT Genetics Precision"
-						description="Defi Kingdoms is a popular rpg influenced web-3 game where players collect NFT heros with stats that do jobs, battle, and go on missions on the Defi Kingdoms and Kaia blockchains.\nDFK Summoner Sheet helps players with one of the most complicated aspects of the game. Choosing hero pairs to summon other heros for their collection. Compare multiple summoning pairs for any hero all at once using real time blockchain genetic data from each hero and see all the relevant data neatly displayed on one screen."
-					/>
-					<ProjectImages imagePath1="/images/dfkSummonerSheet/dfkSummonerSheet1.png" imagePath2="/images/dfkSummonerSheet/dfkSummonerSheet2.png" imagePath3="/images/dfkSummonerSheet/dfkSummonerSheet5cropped.png"/>
-				</div>
-				<ProjectResources githubLink="https://github.com/Sc1entifik/DFK-SummoningSheet" projectLink="https://scientifik.pythonanywhere.com/"/>
+		<div className="h-screen flex flex-col">
+			<div ref={headerRef}>
+				<PortfolioSnapHeader/>
+			</div>
+			<div className="flex-1 overflow-y-scroll no-scrollbar snap-y snap-mandatory">
+				{portfolioProjects}
+			</div>
 		</div>
+
 	);
 }
