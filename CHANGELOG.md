@@ -8,3 +8,7 @@
 - v-0.6.5 - Added Header For the Linkable paths which can be added to sub layouts. Also added body.style.backgroundColor to page.tsx useEffect hook. Minor styling changes.
 - v-0.6.8 - Modularized components in project route to improve readability and allow for experimentation. Changed different element fonts and images to be controlled with clamp function instead of media queries. Added preferredRemValueAndSlope.ts utility function for finding the preferred rem values and slope vw value for the clamp function given the min and max values. Page now scales better on all screen sizes.
 - v-0.7 - Added projects.ts which exports the Project interface and the projects list of Project objects. Created the portfolioSnapHeader.tsx element which wraps the RouteHeader element for styling and sizing purposes for the projects route. Started refactoring page.tsx by creating hooks which will separate the concerns of page.tsx moving those responsibilities to the hooks instead.
+
+
+Bug Fixes:
+p descendant of p bug in description: When refactoring I accidentally split a paragraph inside a paragraph tag because the text was injected, and it needed to be split. I found where it was supposed to be split, why it wasn't split due to a prior refactor and split it there in projectDetails.tsx fixing this bug.

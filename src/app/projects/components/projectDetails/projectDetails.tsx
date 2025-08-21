@@ -11,7 +11,7 @@ export default function ProjectDetails({title, descriptionHeader, description} :
 			<div>
 				<DescriptionHeader descriptionHeader={descriptionHeader}/>
 				{
-					description.split("\\n")
+					description.split("\n")
 					.map((paragraph, i) => <DescriptionParagraph key={i} paragraph={paragraph}/>)
 				}
 			</div>

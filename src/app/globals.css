@@ -7,4 +7,10 @@
 	.no-scrollbar {
 		scrollbar-width: none;
 	}
+
+	.project-swap .snap-start {
+		transition: opacity 0.3s ease, transform 0.3s ease;
+		opacity: 0.3;
+		transform: scale(0.95);
+	}
 }
