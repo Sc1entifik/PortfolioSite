@@ -4,14 +4,14 @@ export function useScrollTransition() {
   const scrollRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const handleScrollEnd = () => {
+    const handleScroll = () => {
       scrollRef.current!.classList.add("project-swap");
-      setTimeout(() => scrollRef.current!.classList.remove("project-swap"), 30);
+      setTimeout(() => scrollRef.current!.classList.remove("project-swap"), 170);
     };
 
-    scrollRef.current!.addEventListener("scrollend", handleScrollEnd);
+    scrollRef.current!.addEventListener("scrollend", handleScroll);
     return () => {
-      scrollRef.current!.removeEventListener("scrollend", handleScrollEnd);
+      scrollRef.current!.removeEventListener("scrollend", handleScroll);
     };
   }, []);
 
