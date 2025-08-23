@@ -13,7 +13,7 @@ export default function Projects() {
 
 	return (
 		<div className="h-screen flex flex-col">
-			<div ref={headerRef}>
+			<div ref={headerRef} >
 				<PortfolioSnapHeader/>
 			</div>
 			<div ref={scrollRef} className="flex-1 overflow-y-scroll no-scrollbar snap-y snap-mandatory">

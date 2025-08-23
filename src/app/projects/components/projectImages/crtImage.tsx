@@ -1,7 +1,8 @@
 import Image from "next/image";
 import preferredRemValueAndSlopeVw from "../../preferredRemValueAndSlope";
 
-export default function CrtImage({src}: {src: string}) {
+//TransformOrigin is the name of the css rule that allows you to set the diretion that the transformation starts. This is set so that the transformation doesn't get cut off by other elements on the screen etc.
+export default function CrtImage({src, transformOrigin}: {src: string, transformOrigin: string}) {
 	const minRem = 5.5;
 	const maxRem = 21;
 	const [preferredRem, slopeVw] = preferredRemValueAndSlopeVw(minRem, maxRem); 
@@ -15,7 +16,6 @@ export default function CrtImage({src}: {src: string}) {
 			hover:scale-[3]
 			md:hover:scale-[2]
 			hover:z-50
-			origin-right
 			relative
 			aspect-[4/3]
 			overflow-hidden
@@ -35,7 +35,10 @@ export default function CrtImage({src}: {src: string}) {
 			after:opacity-10
 			after:z-20"
 
-			style={{width : `clamp(${minRem}rem, ${preferredRem}rem + ${slopeVw}vw, ${maxRem}rem)`}}
+			style={{
+				width : `clamp(${minRem}rem, ${preferredRem}rem + ${slopeVw}vw, ${maxRem}rem)`,
+				transformOrigin,
+			}}
 			>
 			<Image src={src} alt="project screenshot" fill className="object-cover z-0"/>
 		</div>

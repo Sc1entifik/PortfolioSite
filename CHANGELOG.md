@@ -11,4 +11,9 @@
 
 
 Bug Fixes:
-p descendant of p bug in description: When refactoring I accidentally split a paragraph inside a paragraph tag because the text was injected, and it needed to be split. I found where it was supposed to be split, why it wasn't split due to a prior refactor and split it there in projectDetails.tsx fixing this bug.
+
+- P Descendant Of P Bug In Description: When refactoring I accidentally split a paragraph inside a paragraph tag because the text was injected, and it needed to be split. I found where it was supposed to be split and why it wasn't split due to a prior refactor. I removed the faulty split and added the correct split in projectDetails.tsx fixing this bug.
+
+- Crt Image Hover Cut Off - Once the projects got refactored into a list of projectSnapElements the transformation of the top element got cutt off by the header element above it. After toiling with this for some time with z-indexes, divs, and sub-divs, and troubleshooting with GPT it was discovered that the issue was because the top of the scroll container was cutting off the expanded image when the transformation triggered on hover. To fix this I added the transformationOrigin parameter to the crtImage.tsx functional component. This allowed me to change the transformationOrigin of the top project image to top right. This scrolls it away from the edge and allows the scrolling and transformations to work as intended.
+
+

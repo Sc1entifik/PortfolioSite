@@ -14,7 +14,8 @@ export default function PortfolioSnapElement({ portfolioProject, headerHeight }:
 			justify-between 
 			snap-start 
 			no-scrollbar
-			opacity-100" 
+			opacity-100
+			" 
 			style={{ height: `calc(100vh - ${headerHeight}px)` }}>
 			<div className="flex mx-3 max-w-[1536px]">
 				<ProjectDetails title={portfolioProject.title} descriptionHeader={portfolioProject.descriptionHeader} description={portfolioProject.description}/>
