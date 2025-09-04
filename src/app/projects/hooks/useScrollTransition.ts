@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 
 export function useScrollTransition() {
-  const scrollRef = useRef<HTMLElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
