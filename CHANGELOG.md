@@ -9,6 +9,7 @@
 - v-0.6.8 - Modularized components in project route to improve readability and allow for experimentation. Changed different element fonts and images to be controlled with clamp function instead of media queries. Added preferredRemValueAndSlope.ts utility function for finding the preferred rem values and slope vw value for the clamp function given the min and max values. Page now scales better on all screen sizes.
 - v-0.7 - Added projects.ts which exports the Project interface and the projects list of Project objects. Created the portfolioSnapHeader.tsx element which wraps the RouteHeader element for styling and sizing purposes for the projects route. Started refactoring page.tsx by creating hooks which will separate the concerns of page.tsx moving those responsibilities to the hooks instead.
 - v-0.8 - Captured 4:3 ratio screenshots so pictures of projects are not cropped off or distorted. Added custom hook to cause flickering effect when scrolling through projects to give the illusion that a new project "loaded". The projects page looks pretty good on most screensizes. The ones that look subpar do good do look good on their landscape variant.
+- v-0.82 - Created generateEnvFile.ts which allows you to generate the .env file with a random base 64 urlencoded string using deno generateEnvFile.ts > .env. 
 
 
 Bug Fixes:
