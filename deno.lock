@@ -2443,6 +2443,7 @@
         "npm:@types/node@20",
         "npm:@types/react-dom@18",
         "npm:@types/react@18",
+        "npm:canvas@^3.2.0",
         "npm:eslint-config-next@15.0.2-canary.9",
         "npm:eslint@8",
         "npm:next@15.0.2-canary.9",
