@@ -18,8 +18,8 @@ export default function RouteHeader() {
 				<Link href={SiteMap.Projects}>Projects</Link>
 			</div>
 			<div className="flex flex-col">
-				<Link href={SiteMap.Contact}>[3]</Link>
-				<Link href={SiteMap.Contact}>Contact Me</Link>
+				<Link href={SiteMap.Captcha}>[3]</Link>
+				<Link href={SiteMap.Captcha}>Contact Me</Link>
 			</div>
 			<div className="flex flex-col">
 				<Link href={SiteMap.Tutorial}>[4]</Link>

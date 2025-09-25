@@ -16,7 +16,7 @@ function useKeydownRouting() {
 					break;
 
 				case "3":
-					window.location.href = SiteMap.Contact;
+					window.location.href = SiteMap.Captcha;
 					break;
 
 				case "4":
