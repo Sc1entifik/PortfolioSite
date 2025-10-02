@@ -24,7 +24,7 @@ const generateCaptchaString = () => {
 }
 
 
-const generateEncryptedCaptchaTest = () => {
+const generateEncryptedCaptchaText = () => {
 	const captchaText = generateCaptchaString();
 	const secret = base64url.decode(process.env.JWE_SECRET_KEY as string);
 
@@ -33,4 +33,4 @@ const generateEncryptedCaptchaTest = () => {
 		.encrypt(secret);
 }
 
-export default generateEncryptedCaptchaTest;
+export default generateEncryptedCaptchaText;

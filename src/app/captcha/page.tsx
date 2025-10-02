@@ -1,10 +1,10 @@
 import decryptCaptcha from "@/utils/decryptCaptcha";
 import CaptchaCanvas from "./captchaCanvas";
 import CaptchaForm from "./captchaForm";
-import generateEncryptedCaptchaTest from "./encryptedCaptchaTest";
+import generateEncryptedCaptchaText from "./encryptedCaptchaText";
 
 export default async function Captcha() {
-	const encryptedCaptcha = await generateEncryptedCaptchaTest(); 
+	const encryptedCaptcha = await generateEncryptedCaptchaText(); 
 	const captchaText = await decryptCaptcha(encryptedCaptcha);
 
 	return (

@@ -20,7 +20,6 @@ const checkCaptcha = async(form: FormData) => {
 	const userAnswer = form.get("answer");
 	const encryptedCaptcha = form.get("encryptedCaptcha") ? form.get("encryptedCaptcha") as string: ""; 
 	const captchaText = await decryptCaptcha(encryptedCaptcha);
-	console.log(`userAnswer: ${userAnswer}\ncaptchaText: ${captchaText}`);
 
 	if (captchaText === userAnswer) {
 		await createCaptchaSuccessCookie();
