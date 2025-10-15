@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+			backgroundImage: {
+				"ff7-menu": "linear-gradient(135deg, hsl(210,90%,45%), hsl(230, 75%, 28%), hsl(250, 55%, 5%))"
+			},
 			fontFamily: {
 				dos: ["var(--font-dos)", "monospace"],
 			},
@@ -30,6 +33,9 @@ const config: Config = {
 					black: "hsl(0, 0%, 0%)",
 					white: "hsl(0, 0%, 100%)",
 				},
+				contact: {
+					ffMenuBlue: "hsl(245, 90%, 45%)",
+				}
       },
 			screens: {
 				xsphone: "375px",
