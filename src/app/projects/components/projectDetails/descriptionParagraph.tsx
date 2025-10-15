@@ -1,4 +1,4 @@
-import preferredRemValueAndSlopeVw from "../../preferredRemValueAndSlope";
+import preferredRemValueAndSlopeVw from "@/utils/preferredRemValueAndSlope";
 
 export default function DescriptionParagraph({paragraph}: {paragraph: string}) {
 	const minRem = .6;

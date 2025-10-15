@@ -1,4 +1,4 @@
-import preferredRemValueAndSlopeVw from "../../preferredRemValueAndSlope";
+import preferredRemValueAndSlopeVw from "@/utils/preferredRemValueAndSlope";
 
 export default function DescriptionHeader({descriptionHeader}: {descriptionHeader: string}) {
 	const minRem = .87;

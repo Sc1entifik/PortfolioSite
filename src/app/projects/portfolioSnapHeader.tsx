@@ -1,5 +1,5 @@
 import RouteHeader from "@/components/routeHeader";
-import preferredRemValueAndSlopeVw from "./preferredRemValueAndSlope";
+import preferredRemValueAndSlopeVw from "@/utils/preferredRemValueAndSlope";
 
 export default function PortfolioSnapHeader() {
 	const minRem = .55;

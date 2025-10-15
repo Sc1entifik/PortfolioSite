@@ -1,5 +1,5 @@
+import preferredRemValueAndSlopeVw from "@/utils/preferredRemValueAndSlope";
 import Image from "next/image";
-import preferredRemValueAndSlopeVw from "../../preferredRemValueAndSlope";
 
 //TransformOrigin is the name of the css rule that allows you to set the diretion that the transformation starts. This is set so that the transformation doesn't get cut off by other elements on the screen etc.
 export default function CrtImage({src, transformOrigin}: {src: string, transformOrigin: string}) {

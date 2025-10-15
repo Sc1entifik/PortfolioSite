@@ -1,6 +1,6 @@
 import SoftwareScrollBanner from "./softwareScrollBanner";
 import ProjectLinks from "./projectLinks";
-import preferredRemValueAndSlopeVw from "../../preferredRemValueAndSlope";
+import preferredRemValueAndSlopeVw from "@/utils/preferredRemValueAndSlope";
 
 export default function ProjectResources({githubLink, projectLink}:{githubLink: string, projectLink?: string}) {
 	const minRem = .55
