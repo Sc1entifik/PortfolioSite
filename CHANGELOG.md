@@ -11,7 +11,7 @@
 - v-0.8 - Captured 4:3 ratio screenshots so pictures of projects are not cropped off or distorted. Added custom hook to cause flickering effect when scrolling through projects to give the illusion that a new project "loaded". The projects page looks pretty good on most screensizes. The ones that look subpar do good do look good on their landscape variant.
 - v-0.86 - Created generateEnvFile.ts which allows you to generate the .env file with a random base 64 urlencoded string using deno generateEnvFile.ts > .env. Created generateEncryptedCaptchaString function which creates a captcha string and encrypts it in a webtoken using jose which can be decrypted safetly on the server side. Removed previously added middleware after changing data flow. Added a protected contact route that checks for an encrypted web token. If it is there and the right value it renders the contact page otherwise it routes you to the captcha page. Failing the captcha test will take you to the you might be a robot page. 
 - v-0.88 - Created the you might be a robot page with funny robot images of robots you might be. Added ImagesMap to hold the path to all image files in the project and refactored old code to use it. Removed troubleshooting lines causing small errors. 
-- v-0.90 - Added FF7 style contact forms. Added backgroundImage: ff7-menu to tailwind.donfig to create linear-gradiant text boxes for forms.
+- v-0.90 - Added FF7 style contact forms. Added backgroundImage: ff7-menu to tailwind.donfig to create linear-gradiant text boxes for forms. I added a use client version of page.tsx due to needing to pass state setters to form functions. Created contact radio form.
 
 
 Bug Fixes:
