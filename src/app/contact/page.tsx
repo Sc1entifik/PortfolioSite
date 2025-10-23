@@ -2,7 +2,7 @@ import decryptCaptcha from "@/utils/decryptCaptcha";
 import { SiteMap } from "@/utils/siteMap";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import FfContactForm from "./ffContactForm";
+import FfContactForm from "./components/ffContactForm";
 
 export default async function ContactMe() {
 	const cookieStore = await cookies();
