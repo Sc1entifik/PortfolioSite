@@ -9,9 +9,9 @@ export function useScrollTransition() {
       setTimeout(() => scrollRef.current!.classList.remove("project-swap"), 170);
     };
 
-    scrollRef.current!.addEventListener("scrollend", handleScroll);
+    scrollRef.current?.addEventListener("scrollend", handleScroll);
     return () => {
-      scrollRef.current!.removeEventListener("scrollend", handleScroll);
+			 scrollRef.current?.removeEventListener("scrollend", handleScroll);
     };
   }, []);
 
