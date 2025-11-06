@@ -67,8 +67,9 @@
     - Added a custom soundEffect and custom rpgMusic hook. 
     - Added sound effect for radio button change.
     - Added rpg inspired theme music to play in background of menu. 
-    - Made user input form elements inside the contact/components route.
     - Revamped CHANGELOG.md
+    - Made user input form elements inside the contact/components route.
+    - Added audioCredits.tsx element inside contact/components to show audioCredits on ffContactForm.tsx
 
 
 ## Bug Fixes:
