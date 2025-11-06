@@ -1,10 +1,10 @@
-import { ImagesMap } from "@/utils/imagesMap";
+import { MediaMap } from "@/utils/mediaMap";
 import { SiteMap } from "@/utils/siteMap";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function YouMightBeARobot() {
-	const funnyRobotPics = [ImagesMap.DALEK, ImagesMap.ROSIE, ImagesMap.DARPA_TINY_ROBOT,ImagesMap.JOHNNY_FIVE, ImagesMap.ROOMBA, ImagesMap.BENDER].map((x: string, i:number) => <Image key={i} src={x} alt="funny robot picture" width={400} height={300} className="snap-center mx-2"/>);
+	const funnyRobotPics = [MediaMap.DALEK, MediaMap.ROSIE, MediaMap.DARPA_TINY_ROBOT,MediaMap.JOHNNY_FIVE, MediaMap.ROOMBA, MediaMap.BENDER].map((x: string, i:number) => <Image key={i} src={x} alt="funny robot picture" width={400} height={300} className="snap-center mx-2"/>);
 
 	return (
 		<div className="flex flex-col justify-between items-center max-w-prose h-screen mx-auto">

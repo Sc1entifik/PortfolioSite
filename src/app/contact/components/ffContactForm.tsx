@@ -5,6 +5,7 @@ import { useRpgMusic } from "./hooks/useRpgMusic";
 import TextInputForm from "./textInputForm";
 import RadioInputForm from "./radioInputForm";
 import AudioCredits from "./audioCredits";
+import { MediaMap } from "@/utils/mediaMap";
 
 export default function FfContactForm() {
 	const [contactReason, setContactReason] = useState("Hiring Me For A Project Or A Dev Position");
@@ -16,7 +17,7 @@ export default function FfContactForm() {
 	
 	return (
 		<div className="flex flex-col h-[98vh] w-[99%] pt-2 m-auto gap-2 justify-around bg-black">
-			<audio ref={audioRef} autoPlay loop src="/audio/CuriousCritters.mp3"></audio>
+			<audio ref={audioRef} autoPlay loop src={ MediaMap.CURIOUS_CRITTERS }></audio>
 
 			<RadioInputForm contactReason={contactReason} onChange={setContactReason}/>
 			

@@ -1,8 +1,9 @@
+import { MediaMap } from "@/utils/mediaMap";
 import ContactRadioButton from "./contactRadioButton";
 import { useMenuSound } from "./hooks/useMenuSound";
 
 export default function ContactRadioForm({onSelectionChange, initialSelection}: {onSelectionChange: (value: string) => void, initialSelection: string}) {
-	const playSoundEffect = useMenuSound("/audio/001_Hover_01.wav");
+	const playSoundEffect = useMenuSound( MediaMap.HOVER_SOUND );
 
 	const radioOptions = [ 
 		{ value:"Hiring Me For A Project Or A Dev Position", id:"job-discussion" },

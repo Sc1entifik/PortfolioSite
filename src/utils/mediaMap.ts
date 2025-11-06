@@ -1,4 +1,5 @@
 const IMAGES = "/images";
+const AUDIO = "/audio";
 const imageFilePath = (rootPath: string, fileNumber: string) => `${rootPath}${fileNumber}.png`
 const DFK = IMAGES + "/dfkSummonerSheet/dfkSummonerSheet";
 const MAT_TOOL = IMAGES + "/dfkMaterialMiningTool/dfkMaterialMiningTool";
@@ -7,7 +8,7 @@ const MTG_INVENTORY = IMAGES + "/mtgInventoryTool/mtgInventory";
 const NVIM_TELEPORT = IMAGES + "/nvimTeleport/nvimTeleport";
 const ROBOT = IMAGES + "/funnyRobotPictures";
 
-export const ImagesMap = {
+export const MediaMap = {
 	DFK1: imageFilePath(DFK, "1"), 
 	DFK2: imageFilePath(DFK, "2"), 
 	DFK3: imageFilePath(DFK, "3"), 
@@ -29,4 +30,7 @@ export const ImagesMap = {
 	DARPA_TINY_ROBOT: ROBOT + "/darpaTinyRobotCropped.jpg",
 	ROOMBA: ROBOT + "/catOnRoombaCropped.jpg",
 	BENDER: ROBOT + "/benderCropped.jpg",
+	CURIOUS_CRITTERS: AUDIO + "/CuriousCritters.mp3",
+	HOVER_SOUND: AUDIO + "/001_Hover_01.wav",
+	CONFIRM_SOUND: AUDIO + "/013_Confirm_03.wav",
 }; 

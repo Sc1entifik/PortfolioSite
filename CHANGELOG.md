@@ -70,6 +70,7 @@
     - Revamped CHANGELOG.md
     - Made user input form elements inside the contact/components route.
     - Added audioCredits.tsx element inside contact/components to show audioCredits on ffContactForm.tsx
+    - Renamed imagesMap.ts to mediaMap.ts and added music and sound effects links there as well. 
 
 
 ## Bug Fixes:
