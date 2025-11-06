@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRpgMusic } from "./hooks/useRpgMusic";
 import TextInputForm from "./textInputForm";
 import RadioInputForm from "./radioInputForm";
+import AudioCredits from "./audioCredits";
 
 export default function FfContactForm() {
 	const [contactReason, setContactReason] = useState("Hiring Me For A Project Or A Dev Position");
@@ -24,7 +25,11 @@ export default function FfContactForm() {
 				<TextInputForm inputPrompt="What is your email address?" onChange={setEmail}/>
 			</div>
 
-			<TextInputForm inputPrompt="Leave me a message and I'll get back to you." onChange={setUserMessage}/>
+			<div className="flex flex-1 gap-2">
+				<TextInputForm inputPrompt="Leave me a message and I'll get back to you." onChange={setUserMessage}/>
+				<AudioCredits/>
+			</div>
+
 		</div>
 	);
 }
