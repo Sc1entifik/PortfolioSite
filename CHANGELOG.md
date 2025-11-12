@@ -71,7 +71,7 @@
     - Made user input form elements inside the contact/components route.
     - Added audioCredits.tsx element inside contact/components to show audioCredits on ffContactForm.tsx
     - Renamed imagesMap.ts to mediaMap.ts and added music and sound effects links there as well. 
-    - Added emailUserMessage.ts server action to email myself the filled out user form from the end user.
+    - Added emailUserMessage.ts server action in contact/components/serverActions to email myself the filled out user form from the end user.
 
 
 ## Bug Fixes:
