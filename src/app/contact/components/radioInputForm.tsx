@@ -11,6 +11,5 @@ export default function RadioInputForm({contactReason, onChange}: {contactReason
 			<Congratulations/>
 			<ContactRadioForm initialSelection={contactReason} onSelectionChange={onChange} />
 		</RpgBorder>
-		
 	);
 }

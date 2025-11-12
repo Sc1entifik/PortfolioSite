@@ -11,11 +11,15 @@ export default function ContactRadioForm({onSelectionChange, initialSelection}: 
 		{ value:"Talk To Me About One Of My Projects", id:"project-chat" }, 
 		{ value:"Coffee Chat", id:"coffee-chat" } 
 	]
-	.map(x => <ContactRadioButton key={x.id} value={x.value} id={x.id} isSelected={initialSelection} onChange={() => {
+	.map(x => <ContactRadioButton 
+		key={x.id} 
+		value={x.value} 
+		id={x.id} 
+		isSelected={initialSelection} onChange={() => {
 		onSelectionChange(x.value);
 		playSoundEffect();
-	}
-	}/>);
+	}}/>
+	);
 
 	return (
 		<form className="flex flex-col gap-2 py-1 pl-20 list-none">
