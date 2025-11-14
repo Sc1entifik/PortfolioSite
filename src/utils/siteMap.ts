@@ -5,4 +5,5 @@ export enum SiteMap {
 	Tutorial = "/tutorial",
 	Robot = "/robot",
 	Contact = "/contact",
+	FormProcess = "/contact/formProcess",
 }

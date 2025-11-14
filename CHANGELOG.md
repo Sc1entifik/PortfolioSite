@@ -73,6 +73,11 @@
     - Renamed imagesMap.ts to mediaMap.ts and added music and sound effects links there as well. 
     - Added emailUserMessage.ts server action in contact/components/serverActions to email myself the filled out user form from the end user.
 
+- **v-0.93**
+    - Created contact/formProcess subroutes which will handle the form routing logic for the project. 
+    - Added messageSuccess.tsx FC to render the message success message.
+    - Installed jose because web app was using global instance.
+
 
 ## Bug Fixes:
 
