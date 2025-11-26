@@ -77,6 +77,8 @@
     - Created contact/formProcess subroutes which will handle the form routing logic for the project. 
     - Added messageSuccess.tsx FC to render the message success message.
     - Installed jose because web app was using global instance.
+    - Added messageFailure.tsx FC to render the message failure message.
+    - Updated MessageSuccess.tsx to play a confirmation sound when the page renders and also when the user clicks an ok button.
 
 
 ## Bug Fixes:
