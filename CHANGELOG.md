@@ -78,7 +78,7 @@
     - Added messageSuccess.tsx FC to render the message success message.
     - Installed jose because web app was using global instance.
     - Added messageFailure.tsx FC to render the message failure message.
-    - Updated MessageSuccess.tsx to play a confirmation sound when the page renders and also when the user clicks an ok button.
+    - Updated MessageSuccess.tsx to play a confirmation sound when the page renders and also when the user clicks the ok button.
 
 
 ## Bug Fixes:
@@ -87,5 +87,4 @@
 
 - **Crt Image Hover Cut Off:** Once I refactored the projects route to render a list of projectSnapElements the transformation of the top element got cut off by the header element above it. After much toiling and troubleshooting with ChatGPT I discovered that the issue was because the top of the scroll container was cutting off the expanded image when the transformation triggered on hover. To fix this I added the transformationOrigin parameter to the crtImage.tsx functional component. This allowed me to change the transformationOrigin of the top project image to top right. This transforms it away from the edge and allows the scrolling and transformations to work as intended.
 
-- **Projects Navigation Runtime Error:** When navigating to or away from the Projects page via the <Link> tags the useScrollTransition custom hook triggered a runtime error. I eliminated this by using ? operator instead of ! everywhere it called scrollRef.current!! in that hook.
-
+- **Projects Navigation Runtime Error:** When navigating to or away from the Projects page via the <Link> tags the useScrollTransition custom hook triggered a runtime error. I eliminated this by using ? operator instead of ! everywhere it called scrollRef.current ! in that hook.
