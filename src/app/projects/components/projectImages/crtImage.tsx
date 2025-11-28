@@ -40,7 +40,14 @@ export default function CrtImage({src, transformOrigin}: {src: string, transform
 				transformOrigin,
 			}}
 			>
-			<Image src={src} alt="project screenshot" fill className="object-cover z-0"/>
+			<Image
+				src={src} 
+				alt="project screenshot" 
+				className="object-cover z-0" 
+				loading="eager"
+				fill 
+				unoptimized 
+			/>
 		</div>
 	)
 }

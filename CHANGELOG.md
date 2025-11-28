@@ -80,6 +80,10 @@
     - Added messageFailure.tsx FC to render the message failure message.
     - Updated MessageSuccess.tsx to play a confirmation sound when the page renders and also when the user clicks the ok button.
 
+- **v-0.95**
+    - Added allowedDevOrigins to add the dev server IP to quiet error warnings in Dev mode
+    - Added loading="eager" and unoptimized to the crtImage.tsx Image tag to improve performance on projects.tsx route.
+
 
 ## Bug Fixes:
 
