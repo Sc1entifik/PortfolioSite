@@ -8,7 +8,11 @@
 		scrollbar-width: none;
 	}
 
-	.project-swap .snap-start {
-		opacity: 0.05;
-	}
+	@media (min-aspect-ratio: 1/1) {
+		.project-swap .snap-start {
+			opacity: 0.05;
+			
+	
+		}
+  }
 }

@@ -10,8 +10,9 @@ export function useScrollTransition() {
     };
 
     scrollRef.current?.addEventListener("scrollend", handleScroll);
+
     return () => {
-			 scrollRef.current?.removeEventListener("scrollend", handleScroll);
+			scrollRef.current?.removeEventListener("scrollend", handleScroll);
     };
   }, []);
 
