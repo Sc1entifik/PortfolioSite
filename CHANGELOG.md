@@ -83,6 +83,7 @@
 - **v-0.95**
     - Added allowedDevOrigins to add the dev server IP to quiet error warnings in Dev mode
     - Added loading="eager" and unoptimized to the crtImage.tsx Image tag to improve performance on projects.tsx route.
+    - Added useEffect hook to page.tsx in projects route to change the color of the body element so that the main background doesn't bleed through the overlaid phone menu on mobile.
 
 
 ## Bug Fixes:
