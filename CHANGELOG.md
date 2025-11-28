@@ -84,6 +84,7 @@
     - Added allowedDevOrigins to add the dev server IP to quiet error warnings in Dev mode
     - Added loading="eager" and unoptimized to the crtImage.tsx Image tag to improve performance on projects.tsx route.
     - Added useEffect hook to page.tsx in projects route to change the color of the body element so that the main background doesn't bleed through the overlaid phone menu on mobile.
+    - Fixed Project Route Screen Height Bug.
 
 
 ## Bug Fixes:
@@ -93,3 +94,5 @@
 - **Crt Image Hover Cut Off:** Once I refactored the projects route to render a list of projectSnapElements the transformation of the top element got cut off by the header element above it. After much toiling and troubleshooting with ChatGPT I discovered that the issue was because the top of the scroll container was cutting off the expanded image when the transformation triggered on hover. To fix this I added the transformationOrigin parameter to the crtImage.tsx functional component. This allowed me to change the transformationOrigin of the top project image to top right. This transforms it away from the edge and allows the scrolling and transformations to work as intended.
 
 - **Projects Navigation Runtime Error:** When navigating to or away from the Projects page via the <Link> tags the useScrollTransition custom hook triggered a runtime error. I eliminated this by using ? operator instead of ! everywhere it called scrollRef.current ! in that hook.
+
+- **Project Route Screen Height Bug:** When testing the project route it seemed to work perfectly using Responsively app for any screen size. However when you used it on an actual phone the bottom of the screen gets cut off as if the header size from the layout wasn't accounted for. I used Brave AI to help me troubleshoot and find the issue. The issue was in the style tag of the portfolioSnapElement where the calc function was set to use 100vh - ${headerHeight}px needed to be changed to 100dvh which accounts for both desktop and mobile type screen heights. 
