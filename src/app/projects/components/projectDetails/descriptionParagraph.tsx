@@ -5,11 +5,14 @@ export default function DescriptionParagraph({paragraph}: {paragraph: string}) {
 	const maxRem = 2;
 	const [preferredRem, slopeVw] = preferredRemValueAndSlopeVw(minRem, maxRem); 
 
-	return <p className="
+	return <p 
+		className="
 		text-projects-white
 		mb-3
 		2xl:mb-6
-		" style={{ fontSize : `clamp(${minRem}rem, ${preferredRem}rem + ${slopeVw}vw, ${maxRem}rem)` }}>
+		" 
+		style={{ fontSize : `clamp(${minRem}rem, ${preferredRem}rem + ${slopeVw}vw, ${maxRem}rem)` }}
+	>
 		{paragraph}
 	</p>
 

@@ -19,9 +19,11 @@ export default function CrtImage({src, transformOrigin}: {src: string, transform
 			relative
 			aspect-[4/3]
 			overflow-hidden
-			rounded-[6px]
+			rounded-[2px]
+			sm:rounded-[6px]
 			shadow-[inset_0_0_15px_rgba(0,0,0,0.7)]
-			border-[2px]
+			border-[.8px]
+			sm:border-[2px]
 			border-projects-borderGray
 			before:absolute
 			before:inset-0
@@ -33,7 +35,8 @@ export default function CrtImage({src, transformOrigin}: {src: string, transform
 			after:content-['']
 			after:bg-[repeating-linear-gradient(to_bottom,transparent,transparent_2px,black_2px,black_4px)]
 			after:opacity-10
-			after:z-20"
+			after:z-20
+			"
 
 			style={{
 				width : `clamp(${minRem}rem, ${preferredRem}rem + ${slopeVw}vw, ${maxRem}rem)`,
