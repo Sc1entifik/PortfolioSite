@@ -9,10 +9,12 @@ export default function PortfolioSnapHeader() {
 	return (
 		<div className="
 			text-dos-lightGray
+			px-2
 			mt-1
 			mb-3
 			mx-1
 			md:mx-2
+			md:px-4
 			2xl:mx-2
 			2xl:mt-2
 			2xl:mb-6

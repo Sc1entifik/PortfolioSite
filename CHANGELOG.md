@@ -86,6 +86,7 @@
     - Added useEffect hook to page.tsx in projects route to change the color of the body element so that the main background doesn't bleed through the overlaid phone menu on mobile.
     - Fixed Project Route Screen Height Bug.
     - Added media query to globals.css so that flicker effect from projects route only triggers on screens that are wider than they are tall.
+    - Sized text on Captcha form using clamp function so it looks good on all screen sizes.
 
 
 ## Bug Fixes:

@@ -7,7 +7,7 @@ export default function CaptchaForm({encryptedCaptcha}: {encryptedCaptcha: strin
 		<div className="text-black bg-white">
 			<Form action={checkCaptcha}>
 				<input name="encryptedCaptcha" value={encryptedCaptcha} hidden readOnly/>
-				<input name="answer" />
+				<input className="pl-2" name="answer" />
 				<button type="submit" />
 			</Form>
 		</div>

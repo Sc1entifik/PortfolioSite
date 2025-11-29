@@ -30,6 +30,5 @@ export default function Projects() {
 				{portfolioProjects}
 			</div>
 		</div>
-
 	);
 }
