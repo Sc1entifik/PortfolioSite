@@ -1,7 +1,31 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
+@theme {
+	/* Font */
+	--font-dos: var(--font-dos), "monospace";
+
+
+	/* Dos Colors */
+	--color-dos-blue: hsl(240, 100%, 34%);
+	--color-dos-red: hsl(0, 100%, 50%);
+	--color-dos-black: hsl(0, 0%, 0%);
+	--color-dos-white: hsl(0, 0%, 100%);
+	--color-dos-cyan: hsl(180, 100%, 50%);
+	--color-dos-lightGray: hsl(0, 0%, 75%);
+	--color-dos-green: hsl(120, 100%, 50%);
+	--color-dos-yellow: hsl(60, 100%, 50%);
+
+	/* Project Route Colors */
+	--color-projects-backgroundNavy: hsl(220, 60%, 10%);
+	--color-projects-titleRed: hsl(0, 100%, 35%);
+	--color-projects-headerRed: hsl(10, 90%, 50%);
+	--color-projects-borderGray: hsl(0, 0%, 70%);
+	--color-projects-black: hsl(0, 0%, 0%);
+	--color-projects-white: hsl(0, 0%, 100%);
+
+	/* Contact Route Colors */
+	--color-contact-ffMenuBlue: hsl(245, 90%, 45%);
+}
 
 @layer utilities {
 	.no-scrollbar {

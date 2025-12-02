@@ -17,13 +17,13 @@ export default function CrtImage({src, transformOrigin}: {src: string, transform
 			md:hover:scale-[2]
 			hover:z-50
 			relative
-			aspect-[4/3]
+			aspect-4/3
 			overflow-hidden
 			rounded-[2px]
 			sm:rounded-[6px]
 			shadow-[inset_0_0_15px_rgba(0,0,0,0.7)]
 			border-[.8px]
-			sm:border-[2px]
+			sm:border-2
 			border-projects-borderGray
 			before:absolute
 			before:inset-0
