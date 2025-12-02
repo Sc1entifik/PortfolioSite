@@ -97,3 +97,5 @@
 - **Projects Navigation Runtime Error:** When navigating to or away from the Projects page via the <Link> tags the useScrollTransition custom hook triggered a runtime error. I eliminated this by using ? operator instead of ! everywhere it called scrollRef.current ! in that hook.
 
 - **Project Route Screen Height Bug:** When testing the project route it seemed to work perfectly using Responsively app for any screen size. However when you used it on an actual phone the bottom of the screen gets cut off as if the header size from the layout wasn't accounted for. I used Brave AI to help me troubleshoot and find the issue. The issue was in the style tag of the portfolioSnapElement where the calc function was set to use 100vh - ${headerHeight}px needed to be changed to 100dvh which accounts for both desktop and mobile type screen heights. 
+
+- **Major Upgrade to Tailwind V4 Bugs:** Solved many syntax differences and bugs converting from Tailwind v3 config system to Tailwind v4. I also updated to NextJS 16.0.6 which also caused different conflicts and bugs which needed to be resolved.
