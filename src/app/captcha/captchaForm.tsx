@@ -4,7 +4,7 @@ import checkCaptcha from "./serverActions/checkCaptcha";
 
 export default function CaptchaForm({encryptedCaptcha}: {encryptedCaptcha: string}) {
 	return (
-		<div className="text-black">
+		<div className="text-black bg-white">
 			<Form action={checkCaptcha}>
 				<input name="encryptedCaptcha" value={encryptedCaptcha} hidden readOnly/>
 				<input name="answer" />
