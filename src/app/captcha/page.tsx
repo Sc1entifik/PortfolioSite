@@ -1,9 +1,9 @@
 import decryptCaptcha from "@/utils/decryptCaptcha";
-import CaptchaCanvas from "./captchaCanvas";
-import CaptchaForm from "./captchaForm";
-import generateEncryptedCaptchaText from "./encryptedCaptchaText";
-import RobotHeader from "./robotHeader";
-import HomeLink from "./homeLink";
+import CaptchaCanvas from "./components/captchaCanvas";
+import CaptchaForm from "./components/captchaForm";
+import RobotHeader from "./components/robotHeader";
+import HomeLink from "./components/homeLink";
+import generateEncryptedCaptchaText from "./components/utilities/encryptedCaptchaText";
 
 export default async function Captcha() {
 	const encryptedCaptcha = await generateEncryptedCaptchaText(); 
