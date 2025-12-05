@@ -4,6 +4,7 @@ import { MediaMap } from "@/utils/mediaMap";
 import RpgBorder from "../components/rpgBorder";
 import { SiteMap } from "@/utils/siteMap";
 import { useRouter } from "next/navigation";
+import MessageFlexFormat from "./messageFlexFormat";
 
 export default function MessageFailure() {
 	const inputRef = useRef<HTMLInputElement>(null);
@@ -11,18 +12,18 @@ export default function MessageFailure() {
 	const router = useRouter();
 
 	return (
-		<RpgBorder onClick={ () => inputRef.current?.focus() }>
-			<p>Your message failed to get sent. This probably happened because the form was not filled out quickly enough.</p>
-			<button onClick={() => {
-				tryAgainSound.currentTime = 0;
-				tryAgainSound
-					.play()
-					.catch( e => console.warn("Audo playback failed: ", e ) );
+		<MessageFlexFormat>
+			<RpgBorder onClick={ () => inputRef.current?.focus() }>
+				<p className="p-2">Your message failed to get sent. This probably happened because the form was not filled out quickly enough.</p>
+				<button onClick={() => {
+					tryAgainSound.currentTime = 0;
+					tryAgainSound
+						.play()
+						.catch( e => console.warn("Audo playback failed: ", e ) );
 
-				router.replace(SiteMap.Contact);
-
-			}}>Try Again</button>
-		</RpgBorder>
-
+					router.replace(SiteMap.Contact);
+				}}>Try Again</button>
+			</RpgBorder>
+		</MessageFlexFormat>
 	);
 }

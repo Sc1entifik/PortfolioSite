@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { MediaMap } from "@/utils/mediaMap";
 import { useRouter } from "next/navigation";
 import RpgBorder from "../components/rpgBorder";
+import MessageFlexFormat from "./messageFlexFormat";
 
 export default function MessageSuccess() {
 	const inputRef = useRef<HTMLInputElement>(null);
@@ -19,16 +20,18 @@ export default function MessageSuccess() {
 	},[]);
 
 	return (
-		<RpgBorder onClick={ () => inputRef.current?.focus() }>
-			<p>Your message has been sent. You will be contacted soon!</p>
-			<button onClick={() => {
-				confirmationSound.current.currentTime = 0;
-				confirmationSound.current
-					.play()
-					.catch(e => console.warn("Audio playback failed: ", e));
+		<MessageFlexFormat>
+			<RpgBorder onClick={ () => inputRef.current?.focus() }>
+				<p className="p-2">Your message has been sent. You will be contacted soon!</p>
+				<button onClick={() => {
+					confirmationSound.current.currentTime = 0;
+					confirmationSound.current
+						.play()
+						.catch(e => console.warn("Audio playback failed: ", e));
 
-				router.replace("/");
-			}}>OK</button>
-		</RpgBorder>
+					router.replace("/");
+				}}>OK</button>
+			</RpgBorder>
+		</MessageFlexFormat>
 	);
 }
