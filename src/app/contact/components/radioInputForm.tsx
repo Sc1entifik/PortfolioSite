@@ -7,9 +7,9 @@ export default function RadioInputForm({contactReason, onChange}: {contactReason
 	const inputRef = useRef<HTMLInputElement>(null);
 
 	return (
-		<RpgBorder onClick={ () => inputRef.current?.focus() }>
-			<Congratulations/>
-			<ContactRadioForm initialSelection={contactReason} onSelectionChange={onChange} />
-		</RpgBorder>
+			<RpgBorder onClick={ () => inputRef.current?.focus() }>
+				<Congratulations/>
+				<ContactRadioForm initialSelection={contactReason} onSelectionChange={onChange} />
+			</RpgBorder>
 	);
 }

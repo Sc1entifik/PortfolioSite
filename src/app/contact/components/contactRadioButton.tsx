@@ -6,7 +6,6 @@ export default function ContactRadioButton({value, id, isSelected, onChange}: {v
 				<span 
 					className="before:content-['\1F449'] before:opacity-0 peer-checked:before:opacity-100 before:mr-2 before:transition-opacity"
 					style={{
-					fontFamily:"'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'EmojiOne Color'",
 					filter: "brightness(0) invert(1)",
 				}}
 				>

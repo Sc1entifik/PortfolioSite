@@ -87,6 +87,7 @@
     - Fixed Project Route Screen Height Bug.
     - Added media query to globals.css so that flicker effect from projects route only triggers on screens that are wider than they are tall.
     - Sized text on Captcha form using clamp function so it looks good on all screen sizes.
+    - Sized FF inspired contact form with media queries and clamp function.
 
 
 ## Bug Fixes:

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRpgMusic } from "./hooks/useRpgMusic";
 import { MediaMap } from "@/utils/mediaMap";
 import { emailUserMessage } from "./serverActions/emailUserMessage";
@@ -13,27 +13,40 @@ export default function FfContactForm() {
 	const [contactReason, setContactReason] = useState("Hiring Me For A Project Or A Dev Position");
 	const audioRef = useRpgMusic();
 
+
+	useEffect(() => {
+		document.body.style.backgroundColor = "black";
+
+		return () => {
+			document.body.style.backgroundColor = "";
+		};
+	},[]);
+
 	
 	return (
-		<div  className="flex flex-col h-[99vh] w-[99vw] gap-1 pt-2 m-auto justify-around bg-black">
-			<audio ref={audioRef} autoPlay loop src={ MediaMap.CURIOUS_CRITTERS }></audio>
+		<div className="flex place-content-center h-dvh">
+			<div  className="flex flex-col min-h-[65dvh] md:min-h-[85dvh] w-[95dvw] lg:w-[98dvw] gap-1 3xl:gap-2 pt-2 m-auto justify-around bg-black">
+				<audio ref={audioRef} autoPlay loop src={ MediaMap.CURIOUS_CRITTERS }></audio>
 
-			<RadioInputForm contactReason={contactReason} onChange={setContactReason}/>
-			
-			<Form type="submit" action={emailUserMessage} className="flex flex-col gap-1"> 
-				<div className="flex flex-1 gap-1">
-					<TextInputForm name="name" inputPrompt="What is your name?" />
-					<TextInputForm name="email" inputPrompt="What is your email address?" />
-				</div>
-
-				<div className="flex flex-1 gap-1">
+				<RadioInputForm contactReason={contactReason} onChange={setContactReason}/>
+				
+				<Form type="submit" action={emailUserMessage} className="flex flex-col flex-1 gap-y-1 3xl:gap-y-2"> 
 					<input value={contactReason} name="reason" hidden readOnly/>
-					<TextInputForm name="message" inputPrompt="Leave me a message and I'll get back to you" />
-					<AudioCredits/>
-				</div>
-				<button type="submit" hidden/>
-			</Form>
 
+					<div className="flex gap-y-1 gap-x-0.5 sm:flex-col 3xl:gap-y-2">
+						<TextInputForm name="name" inputPrompt="What is your name?" />
+						<TextInputForm name="email" inputPrompt="What is your email address?" />
+					</div>
+
+					<div className="flex flex-col gap-y-1 sm:flex-row sm:gap-x-0.5 3xl:gap-y-2">
+						<TextInputForm name="message" inputPrompt="Leave me a message and I'll get back to you" />
+						<AudioCredits/>
+					</div>
+
+					<button type="submit" hidden/>
+				</Form>
+
+			</div>
 		</div>
 	);
 }
