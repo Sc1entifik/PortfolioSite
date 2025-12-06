@@ -23,14 +23,19 @@ export default function MessageSuccess() {
 		<MessageFlexFormat>
 			<RpgBorder onClick={ () => inputRef.current?.focus() }>
 				<p className="p-2">Your message has been sent. You will be contacted soon!</p>
-				<button onClick={() => {
-					confirmationSound.current.currentTime = 0;
-					confirmationSound.current
-						.play()
-						.catch(e => console.warn("Audio playback failed: ", e));
+				<button 
+					onClick={() => {
+						confirmationSound.current.currentTime = 0;
+						confirmationSound.current
+							.play()
+							.catch(e => console.warn("Audio playback failed: ", e));
 
-					router.replace("/");
-				}}>OK</button>
+						router.replace("/");
+					}}
+					className="hover:cursor-pointer"
+				>
+					OK
+				</button>
 			</RpgBorder>
 		</MessageFlexFormat>
 	);

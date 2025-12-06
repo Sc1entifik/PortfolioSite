@@ -15,14 +15,19 @@ export default function MessageFailure() {
 		<MessageFlexFormat>
 			<RpgBorder onClick={ () => inputRef.current?.focus() }>
 				<p className="p-2">Your message failed to get sent. This probably happened because the form was not filled out quickly enough.</p>
-				<button onClick={() => {
-					tryAgainSound.currentTime = 0;
-					tryAgainSound
-						.play()
-						.catch( e => console.warn("Audo playback failed: ", e ) );
+				<button 
+					onClick={() => {
+						tryAgainSound.currentTime = 0;
+						tryAgainSound
+							.play()
+							.catch( e => console.warn("Audo playback failed: ", e ) );
 
-					router.replace(SiteMap.Contact);
-				}}>Try Again</button>
+						router.replace(SiteMap.Contact);
+					}}
+					className="hover:cursor-pointer"
+				>
+					Try Again
+				</button>
 			</RpgBorder>
 		</MessageFlexFormat>
 	);
