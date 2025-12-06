@@ -22,7 +22,7 @@ export default function ContactRadioForm({onSelectionChange, initialSelection}: 
 	);
 
 	return (
-		<form className="flex flex-col gap-2 py-1 md:pl-3 list-none">
+		<form className="flex flex-col gap-2 py-1 md:pl-3 list-none pb-4">
 			{radioOptions}
 		</form>
 	);

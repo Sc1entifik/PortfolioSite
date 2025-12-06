@@ -17,11 +17,13 @@ export default function PortfolioSnapElement({ portfolioProject, headerHeight }:
 			no-scrollbar
 			opacity-100
 			" 
-			style={{ height: `calc(100dvh - ${headerHeight}px)` }}>
+			style={{ height: `calc(100dvh - ${headerHeight}px)` }}
+		>
 			<div className="flex mx-3 max-w-[1536px]">
 				<ProjectDetails title={portfolioProject.title} descriptionHeader={portfolioProject.descriptionHeader} description={portfolioProject.description}/>
 				<ProjectImages imagePath1={portfolioProject.image1} imagePath2={portfolioProject.image2} imagePath3={portfolioProject.image3}/>
 			</div>
+
 			<ProjectResources githubLink={portfolioProject.githubLink} projectLink={portfolioProject.projectLink} />
 		</div>
 	);

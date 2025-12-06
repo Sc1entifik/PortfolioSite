@@ -8,7 +8,6 @@ export default async function ContactMe() {
 	const cookieStore = await cookies();
 	const encryptedSuccess = cookieStore.get("captchaSuccess")?.value;
 
-	/*
 	if (!encryptedSuccess) {
 		redirect(SiteMap.Captcha);
 	}
@@ -18,7 +17,6 @@ export default async function ContactMe() {
 	if (decryptedSuccess !== "success") {
 		redirect(SiteMap.Captcha);
 	}
-	*/
 
 	return <FfContactForm/>
 }
