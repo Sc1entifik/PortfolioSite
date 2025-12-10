@@ -32,13 +32,13 @@ export async function emailUserMessage(form: FormData) {
 
 	if (isValid) {
 		await transporter.sendMail({
-			from: email,
+			from: process.env.SMTP_EMAIL_ADDRESS,
+			replyTo: email,
 			to: process.env.SMTP_EMAIL_DESTINATION,
 			subject: reason,
 			text: `Name: ${name}\nFrom: ${email}\n\nMessage: ${message}` 
 		} as SMTPTransport.MailOptions);
 		await createMessageSentCookie();
-
 	}
 
 	redirect(SiteMap.FormProcess);
@@ -53,9 +53,9 @@ async function isValidEmailForm(formElements: EmailForm):Promise<boolean> {
 	const decryptedCaptcha = await decryptCaptcha(encryptedCaptcha); 
 	
 	if ( decryptedCaptcha !== "success" || typeof reason !== "string" || typeof name !== "string" || typeof email !== "string" || typeof message !== "string" )	return false;
-	if ( !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$/.test(email) ) return false;
+	if ( !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email) ) return false;
 	if (message.length > 5000) return false;
-	if ( [reason, name, email, message].some(field => /[\r\n]/.test(field))) return false;
+	if ( [reason, name, email].some(field => /[\x00-\x1F\x7F]/.test(field))) return false;
 
 	return true;
 }
