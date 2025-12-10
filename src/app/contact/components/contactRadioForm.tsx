@@ -1,3 +1,5 @@
+"use client";
+
 import { MediaMap } from "@/utils/mediaMap";
 import ContactRadioButton from "./contactRadioButton";
 import { useMenuSound } from "./hooks/useMenuSound";

@@ -1,3 +1,5 @@
+"use client";
+
 import preferredRemValueAndSlopeVw from "@/utils/preferredRemValueAndSlope";
 import { ReactNode } from "react";
 

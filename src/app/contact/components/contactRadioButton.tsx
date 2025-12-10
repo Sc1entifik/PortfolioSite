@@ -1,3 +1,5 @@
+"use client";
+
 export default function ContactRadioButton({value, id, isSelected, onChange}: {value: string, id: string, isSelected: string, onChange: (value: string) => void}) {
 	return (
 		<div>

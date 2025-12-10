@@ -90,6 +90,10 @@
     - Sized FF inspired contact form with media queries and clamp function.
     - Sized and styled captcha robot page using clamp functional components.
 
+- **v-1.0**
+    - Built isValidEmailForm email for validation function for back end validation of contact form. 
+    - Updated all components that use hooks or get passed event handlers in contact route to use "use client".
+
 
 ## Bug Fixes:
 
@@ -102,3 +106,5 @@
 - **Project Route Screen Height Bug:** When testing the project route it seemed to work perfectly using Responsively app for any screen size. However when you used it on an actual phone the bottom of the screen gets cut off as if the header size from the layout wasn't accounted for. I used Brave AI to help me troubleshoot and find the issue. The issue was in the style tag of the portfolioSnapElement where the calc function was set to use 100vh - ${headerHeight}px needed to be changed to 100dvh which accounts for both desktop and mobile type screen heights. 
 
 - **Major Upgrade to Tailwind V4 Bugs:** Solved many syntax differences and bugs converting from Tailwind v3 config system to Tailwind v4. I also updated to NextJS 16.0.6 which also caused different conflicts and bugs which needed to be resolved.
+
+- **NextJS Security Vulnerability Patch:** NextJS experienced a major security vulnerability affecting every codebase with NextJS version 16.0.6 and under. I upgraded to 16.0.8 to resolve this issue. 

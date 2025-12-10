@@ -1,3 +1,5 @@
+"use client";
+
 import { useRef } from "react";
 import RpgBorder from "./rpgBorder";
 import Congratulations from "./congratulations";
