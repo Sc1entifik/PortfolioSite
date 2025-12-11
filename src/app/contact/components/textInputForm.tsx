@@ -18,4 +18,3 @@ export default function TextInputForm({ inputPrompt, name }: { inputPrompt: stri
 		</RpgBorder>
 	);
 }
-

@@ -1,13 +1,14 @@
 "use client";
 
+import Form from "next/form";
 import { useEffect, useState } from "react";
 import { useRpgMusic } from "./hooks/useRpgMusic";
 import { MediaMap } from "@/utils/mediaMap";
 import { emailUserMessage } from "./serverActions/emailUserMessage";
 import TextInputForm from "./textInputForm";
+import TextAreaInputForm from "./textAreaInputForm";
 import RadioInputForm from "./radioInputForm";
 import AudioCredits from "./audioCredits";
-import Form from "next/form";
 
 export default function FfContactForm() {
 	const [contactReason, setContactReason] = useState("Hiring Me For A Project Or A Dev Position");
@@ -25,7 +26,7 @@ export default function FfContactForm() {
 	
 	return (
 		<div className="flex place-content-center h-dvh">
-			<div  className="flex flex-col min-h-[65dvh] md:min-h-[85dvh] w-[95dvw] lg:w-[98dvw] gap-1 3xl:gap-2 pt-2 m-auto justify-around bg-black">
+			<div  className="flex flex-col min-h-[65dvh] md:min-h-[85dvh] lg:min-h-[98dvh] w-[95dvw] lg:w-[99dvw] gap-1 3xl:gap-2 pt-2 m-auto justify-around bg-black">
 				<audio ref={audioRef} autoPlay loop src={ MediaMap.CURIOUS_CRITTERS }></audio>
 
 				<RadioInputForm contactReason={contactReason} onChange={setContactReason}/>
@@ -39,7 +40,7 @@ export default function FfContactForm() {
 					</div>
 
 					<div className="flex flex-col gap-y-1 sm:flex-row sm:gap-x-0.5 3xl:gap-y-2">
-						<TextInputForm name="message" inputPrompt="Leave me a message and I'll get back to you" />
+						<TextAreaInputForm name="message" inputPrompt="Leave me a message and I'll get back to you" />
 						<AudioCredits/>
 					</div>
 
