@@ -34,12 +34,12 @@ export default function FfContactForm() {
 				<Form type="submit" action={emailUserMessage} className="flex flex-col flex-1 gap-y-1 3xl:gap-y-2"> 
 					<input value={contactReason} name="reason" hidden readOnly/>
 
-					<div className="flex gap-y-1 gap-x-0.5 sm:flex-col 3xl:gap-y-2">
+					<div className="flex gap-y-1 gap-x-0.5 sm:flex-col sm:flex-1 3xl:gap-y-2">
 						<TextInputForm name="name" inputPrompt="What is your name?" />
 						<TextInputForm name="email" inputPrompt="What is your email address?" />
 					</div>
 
-					<div className="flex flex-col gap-y-1 sm:flex-row sm:gap-x-0.5 3xl:gap-y-2">
+					<div className="flex flex-col gap-y-1 sm:flex-row sm:gap-x-0.5 sm:flex-1 3xl:gap-y-2">
 						<TextAreaInputForm name="message" inputPrompt="Leave me a message and I'll get back to you" />
 						<AudioCredits/>
 					</div>

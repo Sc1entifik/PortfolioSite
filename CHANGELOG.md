@@ -94,6 +94,7 @@
     - Built isValidEmailForm email for validation function for back end validation of contact form. 
     - Updated all components that use hooks or get passed event handlers in contact route to use "use client".
     - Created textAreaInputForm.tsx to create an ff7 inspired input form that is also a textarea and handles all the intricaacies of newlines with shift+enter or submitting with enter.
+    - Changed robot page to show a random robot inspired by Amazon random puppies.
 
 
 ## Bug Fixes:
