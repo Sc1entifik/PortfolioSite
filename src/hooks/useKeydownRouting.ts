@@ -18,10 +18,6 @@ function useKeydownRouting() {
 				case "3":
 					window.location.href = SiteMap.Captcha;
 					break;
-
-				case "4":
-					window.location.href = SiteMap.Tutorial;
-					break;
 			}
 		};
 

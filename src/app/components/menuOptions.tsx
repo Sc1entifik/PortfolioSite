@@ -11,7 +11,6 @@ export default function MenuOptions() {
 		<Link href={SiteMap.Home}>[1] Main Menu</Link>
 		<Link href={SiteMap.Projects}>[2] Projects</Link>
 		<Link href={SiteMap.Captcha}>[3] Contact Me</Link>
-		<Link href={SiteMap.Tutorial}>[4] Tutorial</Link>
 	</div>
 	);
 }

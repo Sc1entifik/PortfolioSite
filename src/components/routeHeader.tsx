@@ -8,7 +8,7 @@ export default function RouteHeader() {
 	useKeydownRouting();
 	
 	return (
-		<div className="flex justify-between gap-3">
+		<div className="flex justify-between sm:justify-around gap-3">
 			<div className="flex flex-col">
 				<Link href={SiteMap.Home}>[1]</Link>
 				<Link href={SiteMap.Home}>Main Menu</Link>
@@ -20,10 +20,6 @@ export default function RouteHeader() {
 			<div className="flex flex-col">
 				<Link href={SiteMap.Captcha}>[3]</Link>
 				<Link href={SiteMap.Captcha}>Contact Me</Link>
-			</div>
-			<div className="flex flex-col">
-				<Link href={SiteMap.Tutorial}>[4]</Link>
-				<Link href={SiteMap.Tutorial}>Tutorial</Link>
 			</div>
 		</div>
 	);
