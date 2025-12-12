@@ -6,7 +6,7 @@ import InvisibleMeasurementDiv from "./invisibleMeasurementDiv";
 const borderChar = "@";
 
 export default function LandingPageHeader() {
-	const measurerRef = useRef(null);
+	const measurerRef = useRef<HTMLDivElement>(null);
 	const numCh = useCharCount(measurerRef);
 
 

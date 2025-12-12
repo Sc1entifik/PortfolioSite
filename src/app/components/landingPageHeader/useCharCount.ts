@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export function useCharCount(measurerRef: React.RefObject<HTMLDivElement>) {
+export function useCharCount(measurerRef: React.RefObject<HTMLDivElement | null>) {
 	const [numCh, setNumCh] = useState(25);
 
 	useEffect(() => {
