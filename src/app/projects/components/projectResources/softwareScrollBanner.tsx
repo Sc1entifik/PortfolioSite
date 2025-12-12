@@ -3,7 +3,7 @@ export default function SoftwareScrollBanner() {
 		flex
 		items-center
 		text-center
-		max-w-104
+		max-w-[18ch]
 		bg-projects-white
 		text-projects-black
 		px-3

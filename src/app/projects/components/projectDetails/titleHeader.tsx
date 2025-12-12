@@ -1,7 +1,7 @@
 import preferredRemValueAndSlopeVw from "@/utils/preferredRemValueAndSlope";
 
 export default function TitleHeader({title}: {title: string}) {
-	const minRem = 1.75;
+	const minRem = 1.5;
 	const maxRem = 5.5;
 	const [preferredRemValue, slopeVw] = preferredRemValueAndSlopeVw(minRem, maxRem); 
 

@@ -19,7 +19,7 @@ export default function PortfolioSnapElement({ portfolioProject, headerHeight }:
 			" 
 			style={{ height: `calc(100dvh - ${headerHeight}px)` }}
 		>
-			<div className="flex mx-3 max-w-[1536px]">
+			<div className="flex mx-3 sm:w-4/5">
 				<ProjectDetails title={portfolioProject.title} descriptionHeader={portfolioProject.descriptionHeader} description={portfolioProject.description}/>
 				<ProjectImages imagePath1={portfolioProject.image1} imagePath2={portfolioProject.image2} imagePath3={portfolioProject.image3}/>
 			</div>

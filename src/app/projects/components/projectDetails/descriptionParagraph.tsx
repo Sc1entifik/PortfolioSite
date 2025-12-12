@@ -11,7 +11,7 @@ export default function DescriptionParagraph({paragraph}: {paragraph: string}) {
 		mb-3
 		2xl:mb-6
 		" 
-		style={{ fontSize : `clamp(${minRem}rem, ${preferredRem}rem + ${slopeVw}vw, ${maxRem}rem)` }}
+		style={{ fontSize : `clamp(${minRem}rem, ${preferredRem}rem + ${slopeVw}dvw, ${maxRem}rem)` }}
 	>
 		{paragraph}
 	</p>
