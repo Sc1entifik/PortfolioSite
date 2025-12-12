@@ -8,5 +8,3 @@ This is my developer portfolio site I am going to host on Vercel to show off all
 - Play around with sound effects
 - Use node mailer api to send e-mails to myself using a contact form
 - Create a Captcha test to keep people from spamming my inbox.
-
-
