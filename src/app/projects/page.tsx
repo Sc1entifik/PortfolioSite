@@ -26,6 +26,7 @@ export default function Projects() {
 			<div ref={headerRef} >
 				<PortfolioSnapHeader/>
 			</div>
+
 			<div ref={scrollRef} className="flex-1 overflow-y-scroll no-scrollbar snap-y snap-mandatory">
 				{portfolioProjects}
 			</div>

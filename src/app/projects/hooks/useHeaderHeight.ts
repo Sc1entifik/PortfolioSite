@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-export function useHeaderHeight(): [headerRef: React.RefObject<HTMLDivElement>, headerHeight: number] {
+export function useHeaderHeight(): [headerRef: React.RefObject<HTMLDivElement | null>, headerHeight: number] {
 	const headerRef = useRef<HTMLDivElement>(null);
 	const [headerHeight, setHeaderHeight] = useState(0);
 
