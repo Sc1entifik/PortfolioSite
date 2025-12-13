@@ -112,3 +112,5 @@
 - **Major Upgrade to Tailwind V4 Bugs:** Solved many syntax differences and bugs converting from Tailwind v3 config system to Tailwind v4. I also updated to NextJS 16.0.6 which also caused different conflicts and bugs which needed to be resolved.
 
 - **NextJS Security Vulnerability Patch:** NextJS experienced a major security vulnerability affecting every codebase with NextJS version 16.0.6 and under. I upgraded to 16.0.8 to resolve this issue. 
+
+-**Delays With Production Version Loading Audio And Pictures** - Certain pictures and audio was delayed on first visit which is unacceptable. I changed settings on the Image tags and audio tags to try to prevent this and force fast paints.

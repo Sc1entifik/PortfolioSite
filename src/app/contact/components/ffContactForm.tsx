@@ -27,7 +27,7 @@ export default function FfContactForm() {
 	return (
 		<div className="flex place-content-center h-dvh">
 			<div  className="flex flex-col min-h-[65dvh] md:min-h-[85dvh] lg:min-h-[98dvh] w-[95dvw] lg:w-[99dvw] gap-1 3xl:gap-2 pt-2 m-auto justify-around bg-black">
-				<audio ref={audioRef} autoPlay loop src={ MediaMap.CURIOUS_CRITTERS }></audio>
+				<audio ref={audioRef} autoPlay loop preload="auto" src={ MediaMap.CURIOUS_CRITTERS }></audio>
 
 				<RadioInputForm contactReason={contactReason} onChange={setContactReason}/>
 				

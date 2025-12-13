@@ -47,7 +47,7 @@ export default function CrtImage({src, transformOrigin}: {src: string, transform
 				src={src} 
 				alt="project screenshot" 
 				className="object-cover z-0" 
-				loading="eager"
+				priority
 				fill 
 				unoptimized 
 			/>
