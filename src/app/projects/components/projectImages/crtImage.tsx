@@ -49,7 +49,6 @@ export default function CrtImage({src, transformOrigin}: {src: string, transform
 				className="object-cover z-0" 
 				priority
 				fill 
-				unoptimized 
 			/>
 		</div>
 	)

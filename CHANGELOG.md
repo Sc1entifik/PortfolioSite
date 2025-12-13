@@ -113,4 +113,4 @@
 
 - **NextJS Security Vulnerability Patch:** NextJS experienced a major security vulnerability affecting every codebase with NextJS version 16.0.6 and under. I upgraded to 16.0.8 to resolve this issue. 
 
--**Delays With Production Version Loading Audio And Pictures** - Certain pictures and audio was delayed on first visit which is unacceptable. I changed settings on the Image tags and audio tags to try to prevent this and force fast paints.
+-**Delays With Production Version Loading Audio And Pictures** - Certain pictures and audio was delayed on first visit but only on production which is unacceptable. This problem is very difficult to troubleshoot because it only happens on production and not development. I changed settings on the Image tags and audio tags to try to prevent this and force fast paints. I removed unoptimized setting for project image tags to see if that speeds the first paint up.
