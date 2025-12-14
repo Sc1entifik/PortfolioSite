@@ -2,8 +2,10 @@ import generateEncryptedCaptchaText from "./utilities/encryptedCaptchaText";
 import decryptCaptcha from "@/utils/decryptCaptcha";
 import CaptchaCanvas from "./captchaCanvas";
 import CaptchaForm from "./captchaForm";
+import { connection } from "next/server";
 
 export default async function CaptchaElements() {
+	await connection();
 	const encryptedCaptcha = await generateEncryptedCaptchaText();
 	const captchaText = await decryptCaptcha(encryptedCaptcha);
 
