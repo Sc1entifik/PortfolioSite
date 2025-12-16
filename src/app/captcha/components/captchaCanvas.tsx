@@ -1,5 +1,6 @@
 import { createCanvas } from "canvas";
 import ClampSizedImage from "./clampSizedImage";
+import Image from "next/image";
 
 export default function CaptchaCanvas({captchaText}: {captchaText: string} ) {
 	const width = 300;
@@ -25,11 +26,7 @@ export default function CaptchaCanvas({captchaText}: {captchaText: string} ) {
 	const buffer = canvas.toBuffer("image/png");
 	const base64Image = buffer.toString("base64");
 	const imageSrc = `data:image/png;base64,${base64Image}`;
-
-	return (
-		<div>
-			<p>{captchaText}</p>
-			<ClampSizedImage src={imageSrc} width={width} height={height}/> 
-		</div>
-	); 
+	//<ClampSizedImage src={imageSrc} width={width} height={height}/> 
+	
+	return <Image src={imageSrc} width={width} height={height} alt="captcha Image"/>
 }
