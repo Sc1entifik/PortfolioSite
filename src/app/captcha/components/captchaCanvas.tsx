@@ -29,9 +29,5 @@ export default function CaptchaCanvas({captchaText}: {captchaText: string} ) {
 	const base64Image = buffer.toString("base64");
 	const imageSrc = `data:image/png;base64,${base64Image}`;
 	
-	return (
-		<div>
-			<ClampSizedImage src={imageSrc} width={width} height={height}/> 
-		</div>
-	);	
+	return <ClampSizedImage src={imageSrc} width={width} height={height}/> 
 }
