@@ -28,7 +28,6 @@ export default function CaptchaCanvas({captchaText}: {captchaText: string} ) {
 	
 	return (
 		<div>
-			<p>{imageSrc}</p>
 			<ClampSizedImage src={imageSrc} width={width} height={height}/> 
 		</div>
 	);	
