@@ -8,7 +8,6 @@ const testString = async () => "Test Value";
 
 export default async function CaptchaElements() {
 	await connection();
-	const test = await testString();
 	const encryptedCaptcha = await generateEncryptedCaptchaText();
 	const captchaText = await decryptCaptcha(encryptedCaptcha);
 

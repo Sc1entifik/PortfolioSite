@@ -19,13 +19,17 @@ export default function CaptchaCanvas({captchaText}: {captchaText: string} ) {
 	const angle = (Math.random() * 30 - 15) * (Math.PI / 180);
 	ctx.translate(20, 65);
 	ctx.rotate(angle);
-	//ctx.fillText(captchaText, 0, 0);
-	ctx.fillText("myString", 0, 0);
+	ctx.fillText(captchaText, 0, 0);
 	ctx.rotate(-angle);
 	ctx.translate(-20, -65);
 	const buffer = canvas.toBuffer("image/png");
 	const base64Image = buffer.toString("base64");
 	const imageSrc = `data:image/png;base64,${base64Image}`;
 	
-	return <ClampSizedImage src={imageSrc} width={width} height={height}/> 
+	return (
+		<div>
+			<p>{imageSrc}</p>
+			<ClampSizedImage src={imageSrc} width={width} height={height}/> 
+		</div>
+	);	
 }
