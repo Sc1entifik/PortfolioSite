@@ -15,15 +15,10 @@ export default async function CaptchaElements() {
 
 	return (
 		<div className="flex flex-col items-center gap-3">
-			<Suspense fallback={<p>loading...</p>}>
-				<CaptchaCanvas captchaText={test}/>
-			</Suspense>
-			<Suspense fallback={<p>loading...</p>}>
-				<CaptchaCanvas captchaText={captchaText}/>
-			</Suspense>
-			<Suspense fallback={<p>loading...</p>}>
-				<CaptchaForm encryptedCaptcha={encryptedCaptcha}/>
-			</Suspense>
+			<CaptchaCanvas captchaText="Test Value"/>
+			<CaptchaCanvas captchaText={test}/>
+			<CaptchaCanvas captchaText={captchaText}/>
+			<CaptchaForm encryptedCaptcha={encryptedCaptcha}/>
 		</div>
 	);
 }
