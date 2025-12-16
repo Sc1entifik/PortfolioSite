@@ -102,6 +102,7 @@
     - Fixed Caching Due To Dynamic Rendering bug.
     - Fixed Captcha Appearing As Glyphs On Canvas When Using Connection() Function bug.
     - Added PlayfairDisplay font for captcha canvas.
+    - Added better favicon and website title.
 
 
 ## Bug Fixes:
