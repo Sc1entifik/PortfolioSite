@@ -98,6 +98,11 @@
     - Minor styling changes to projects route.
     - Removed tutorial route from main menu and menu header.
 
+- **v-1.1**
+    - Fixed Caching Due To Dynamic Rendering bug.
+    - Fixed Captcha Appearing As Glyphs On Canvas When Using Connection() Function bug.
+    - Added PlayfairDisplay font for captcha canvas.
+
 
 ## Bug Fixes:
 
@@ -115,4 +120,6 @@
 
 -**Delays With Production Version Loading Audio And Pictures** - Certain pictures and audio was delayed on first visit but only on production which is unacceptable. This problem is very difficult to troubleshoot because it only happens on production and not development. I changed settings on the Image tags and audio tags to try to prevent this and force fast paints. I removed unoptimized setting for project image tags to see if that speeds the first paint up. Music loading problem was fixed with usePreloadRpgMusic hook in the captcha form so the song preloads as the user is filling out the captcha.
 
--**Captcha Caching Due To Dynamic Rendering** - Dynamic rendering forced NextJS to cache the captcha value once instead of running the captcha generating request on each render. I extracted the Captcha elements out to their own FC and used the connection() function to fix this. This is again hard to troubleshoot because it works in development not production. This section will be updated again once I am sure I fixed this for good.
+-**Captcha Caching Due To Dynamic Rendering** - Dynamic rendering forced NextJS to cache the captcha value once instead of running the captcha generating request on each render. I extracted the Captcha elements out to their own FC and used the connection() function to fix this. This is again hard to troubleshoot because it works in development not production. This section will be updated again once I am sure I fixed this for good. The connection() function solved the dynamic page issue.
+
+-**Captcha Appearing As Glyphs On Canvas When Using Connection() Function** - After hours of troubleshooting trying to figure out why the captcha was printing out glyphs instead of letters when using the connection() function I isolated the source of the problem as the captchaCanvas.tsx functional component. It turns out that the Arial font was not available when hitting this component from the cold start that connection() forces. After consulting with GPT on how to fix this issue it suggested I dl a font in my fonts folder and use the register font function to register the font. This worked and got the canvas API to render my captcha in a nicer looking font than Arial anyhow!

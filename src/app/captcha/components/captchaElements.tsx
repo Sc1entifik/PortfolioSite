@@ -4,8 +4,6 @@ import decryptCaptcha from "@/utils/decryptCaptcha";
 import CaptchaCanvas from "./captchaCanvas";
 import CaptchaForm from "./captchaForm";
 
-const testString = async () => "Test Value";
-
 export default async function CaptchaElements() {
 	await connection();
 	const encryptedCaptcha = await generateEncryptedCaptchaText();
