@@ -3,7 +3,6 @@ import decryptCaptcha from "@/utils/decryptCaptcha";
 import CaptchaCanvas from "./captchaCanvas";
 import CaptchaForm from "./captchaForm";
 import { connection } from "next/server";
-import { Suspense } from "react";
 
 const testString = async () => "Test Value";
 
@@ -15,7 +14,8 @@ export default async function CaptchaElements() {
 
 	return (
 		<div className="flex flex-col items-center gap-3">
-			<CaptchaCanvas captchaText="Test Value"/>
+			<p>{test}</p>
+			<p>encryptedCaptcha</p>
 			<CaptchaCanvas captchaText={test}/>
 			<CaptchaCanvas captchaText={captchaText}/>
 			<CaptchaForm encryptedCaptcha={encryptedCaptcha}/>
