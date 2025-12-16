@@ -15,7 +15,7 @@ export default async function CaptchaElements() {
 	return (
 		<div className="flex flex-col items-center gap-3">
 			<p>{test}</p>
-			<p>encryptedCaptcha</p>
+			<p>{encryptedCaptcha}</p>
 			<CaptchaCanvas captchaText={test}/>
 			<CaptchaCanvas captchaText={captchaText}/>
 			<CaptchaForm encryptedCaptcha={encryptedCaptcha}/>
