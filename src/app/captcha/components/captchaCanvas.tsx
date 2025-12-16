@@ -29,6 +29,7 @@ export default function CaptchaCanvas({captchaText}: {captchaText: string} ) {
 	return (
 		<div>
 			<p>{imageSrc.slice(0, 100)}</p>
+			<p>{base64Image.slice(0, 78)}</p>
 			<ClampSizedImage src={imageSrc} width={width} height={height}/> 
 		</div>
 	);	
