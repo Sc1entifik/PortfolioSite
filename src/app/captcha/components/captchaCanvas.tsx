@@ -1,7 +1,10 @@
-import { createCanvas } from "canvas";
+import { createCanvas, registerFont } from "canvas";
 import ClampSizedImage from "./clampSizedImage";
+import path from "path";
 
 export default function CaptchaCanvas({captchaText}: {captchaText: string} ) {
+	const fontPath = path.join(process.cwd(),"src", "app", "fonts", "Arima-VariableFont_wght.ttf");
+	registerFont(fontPath, { family: "Arima" })
 	const width = 300;
 	const height = 130;
 	const canvas = createCanvas(width, height);
@@ -14,7 +17,7 @@ export default function CaptchaCanvas({captchaText}: {captchaText: string} ) {
 		ctx.fillRect(Math.random() * width, Math.random() * height, 5, 5);
 	}
 
-	ctx.font = "24px Arial";
+	ctx.font = "24px Arima";
 	ctx.fillStyle = "#000";
 	const angle = (Math.random() * 30 - 15) * (Math.PI / 180);
 	ctx.translate(20, 65);
