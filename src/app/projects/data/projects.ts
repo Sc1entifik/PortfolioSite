@@ -42,7 +42,7 @@ export const projects: Project[] = [
 		image2: MediaMap.JAMMMING2, 
 		image3: MediaMap.JAMMMING3, 
 		githubLink: "https://github.com/Sc1entifik/CCJammming",
-		projectLink: "https://cc-jammming.vercel.app/"
+		projectLink: "https://jammming.drosenberry.dev"
 	},
 
 	{
