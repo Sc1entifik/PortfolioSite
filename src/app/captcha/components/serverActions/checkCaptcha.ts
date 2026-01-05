@@ -5,16 +5,21 @@ import { redirect } from "next/navigation";
 import { SiteMap } from "@/utils/siteMap";
 import decryptCaptcha from "@/utils/decryptCaptcha";
 
-const createCaptchaSuccessCookie = async() => {
+const createCaptchaValuesCookie = async (userAnswer: string, encryptedCaptcha: string) => {
 	const cookieStore = await cookies();
 	const secret = base64url.decode(process.env.JWE_SECRET_KEY as string);
 	const isProduction = process.env.RUNTIME_ENVIRONMENT === "production";
-	const maxAge = 60 * 6;
-	const encryptedSuccess = await new CompactEncrypt(new TextEncoder().encode("success"))
+	const maxAge = 60 * 3;
+	const payload = JSON.stringify({
+		encryptedCaptcha,
+		userAnswer,
+		createdAt: Date.now(),
+	});
+	const encryptedPayload = await new CompactEncrypt(new TextEncoder().encode(payload))
 	.setProtectedHeader({ alg: "dir", enc: "A256GCM" })
 	.encrypt(secret);
 
-	cookieStore.set({name: "captchaSuccess", value: encryptedSuccess, httpOnly: true, secure: isProduction, sameSite: "strict", maxAge });
+	cookieStore.set({name: "captchaValuesObject", value: encryptedPayload, httpOnly: true, secure: isProduction, sameSite: "strict", maxAge });
 };
 
 const checkCaptcha = async(form: FormData) => {
@@ -23,7 +28,7 @@ const checkCaptcha = async(form: FormData) => {
 	const captchaText = await decryptCaptcha(encryptedCaptcha);
 
 	if (captchaText === userAnswer) {
-		await createCaptchaSuccessCookie();
+		await createCaptchaValuesCookie(userAnswer, encryptedCaptcha);
 
 		redirect(SiteMap.Contact);
 	} else {

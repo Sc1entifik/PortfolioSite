@@ -103,6 +103,7 @@
     - Fixed Captcha Appearing As Glyphs On Canvas When Using Connection() Function bug.
     - Added PlayfairDisplay font for captcha canvas.
     - Added better favicon and website title.
+    - Hardened CAPTCHA security for contact form.
 
 
 ## Bug Fixes:

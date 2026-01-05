@@ -1,3 +1,4 @@
+import { connection } from "next/server";
 import decryptCaptcha from "@/utils/decryptCaptcha";
 import { SiteMap } from "@/utils/siteMap";
 import { cookies } from "next/headers";
@@ -5,16 +6,19 @@ import { redirect } from "next/navigation";
 import FfContactForm from "./components/ffContactForm";
 
 export default async function ContactMe() {
+	await connection();
 	const cookieStore = await cookies();
-	const encryptedSuccess = cookieStore.get("captchaSuccess")?.value;
+	const encryptedCaptchaObject = cookieStore.get("captchaValuesObject")?.value;
 
-	if (!encryptedSuccess) {
+	if (!encryptedCaptchaObject) {
 		redirect(SiteMap.Captcha);
 	}
 
-	const decryptedSuccess = await decryptCaptcha(encryptedSuccess);
+	const decryptedCaptchaObject = JSON.parse(await decryptCaptcha(encryptedCaptchaObject));
+	const decryptedCaptchaValue = await decryptCaptcha(decryptedCaptchaObject.encryptedCaptcha);
+	const createdWithinThreeMin = Date.now() - decryptedCaptchaObject.createdAt <= 3 * 60 * 1000;
 
-	if (decryptedSuccess !== "success") {
+	if (!decryptedCaptchaValue || decryptedCaptchaObject.userAnswer !== decryptedCaptchaValue || !createdWithinThreeMin) {
 		redirect(SiteMap.Captcha);
 	}
 
