@@ -47,12 +47,15 @@ export async function emailUserMessage(form: FormData) {
 
 async function isValidEmailForm(formElements: EmailForm):Promise<boolean> {
 	const {reason, name, email, message} = formElements;
-	const encryptedCaptcha = await cookies().then(x => x.get("captchaSuccess")?.value);
+	const encryptedCaptchaObject = await cookies().then(x => x.get("captchaValuesObject")?.value);
 
-	if (encryptedCaptcha === undefined) return false;
-	const decryptedCaptcha = await decryptCaptcha(encryptedCaptcha); 
+	if (encryptedCaptchaObject === undefined) return false;
+	const decryptedCaptchaObject = JSON.parse(await decryptCaptcha(encryptedCaptchaObject)); 
+	if (decryptedCaptchaObject === undefined) return false;
+	const captchaValue = await decryptCaptcha(decryptedCaptchaObject.encryptedCaptcha);
+	const isCreatedWithinFiveMin = Date.now() - decryptedCaptchaObject.createdAt <= 5 * 60 * 1000;
 	
-	if ( decryptedCaptcha !== "success" || typeof reason !== "string" || typeof name !== "string" || typeof email !== "string" || typeof message !== "string" )	return false;
+	if ( !isCreatedWithinFiveMin || captchaValue !== decryptedCaptchaObject.userAnswer || typeof reason !== "string" || typeof name !== "string" || typeof email !== "string" || typeof message !== "string" )	return false;
 	if ( !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email) ) return false;
 	if (message.length > 5000) return false;
 	if ( [reason, name, email].some(field => /[\x00-\x1F\x7F]/.test(field))) return false;

@@ -9,7 +9,7 @@ const createCaptchaValuesCookie = async (userAnswer: string, encryptedCaptcha: s
 	const cookieStore = await cookies();
 	const secret = base64url.decode(process.env.JWE_SECRET_KEY as string);
 	const isProduction = process.env.RUNTIME_ENVIRONMENT === "production";
-	const maxAge = 60 * 3;
+	const maxAge = 60 * 8;
 	const payload = JSON.stringify({
 		encryptedCaptcha,
 		userAnswer,

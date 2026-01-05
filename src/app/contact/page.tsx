@@ -16,9 +16,9 @@ export default async function ContactMe() {
 
 	const decryptedCaptchaObject = JSON.parse(await decryptCaptcha(encryptedCaptchaObject));
 	const decryptedCaptchaValue = await decryptCaptcha(decryptedCaptchaObject.encryptedCaptcha);
-	const createdWithinThreeMin = Date.now() - decryptedCaptchaObject.createdAt <= 3 * 60 * 1000;
+	const isCreatedWithinThreeMin = Date.now() - decryptedCaptchaObject.createdAt <= 3 * 60 * 1000;
 
-	if (!decryptedCaptchaValue || decryptedCaptchaObject.userAnswer !== decryptedCaptchaValue || !createdWithinThreeMin) {
+	if (!decryptedCaptchaValue || decryptedCaptchaObject.userAnswer !== decryptedCaptchaValue || !isCreatedWithinThreeMin) {
 		redirect(SiteMap.Captcha);
 	}
 
