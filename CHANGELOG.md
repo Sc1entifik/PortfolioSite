@@ -104,6 +104,8 @@
     - Added PlayfairDisplay font for captcha canvas.
     - Added better favicon and website title.
     - Hardened CAPTCHA security for contact form.
+    - Updated Next version to 16.1.6
+    - Updated all dependencies.
 
 
 ## Bug Fixes:
